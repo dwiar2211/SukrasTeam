@@ -41,7 +41,6 @@ body{
 }
 ::selection{background:var(--primary);color:#fff}
 
-/* HEADER */
 .hdr{background:linear-gradient(135deg,#0c0a09 0%,#1c1917 100%);position:relative;z-index:60;overflow:hidden;border-bottom:1px solid #292524}
 .hdr::before{content:'';position:absolute;inset:0;background-image:radial-gradient(at 20% 100%,rgba(15,118,110,.18) 0%,transparent 50%),radial-gradient(at 80% 0%,rgba(234,88,12,.12) 0%,transparent 45%)}
 .hdr::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent) 30%,var(--primary) 70%,transparent)}
@@ -59,7 +58,6 @@ body{
 @keyframes livepulse{0%,100%{opacity:1}50%{opacity:.45}}
 .hdr-team{font-family:var(--mono);font-size:10px;color:rgba(255,255,255,.4);line-height:1.5;text-align:right}
 
-/* TICKER */
 .ticker{background:var(--surface);border-bottom:1px solid var(--border);padding:9px 32px;display:flex;align-items:center;font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.02em;overflow-x:auto;white-space:nowrap;box-shadow:0 1px 0 rgba(0,0,0,.02)}
 .ticker-item{display:inline-flex;align-items:center;gap:6px;padding:0 14px;border-right:1px solid var(--border)}
 .ticker-item:last-child{border-right:none}
@@ -69,7 +67,6 @@ body{
 .ticker-dot::after{content:'';position:absolute;inset:-3px;border-radius:50%;background:var(--ok);opacity:.4;animation:pulse 2s var(--ease-out) infinite}
 @keyframes pulse{0%{transform:scale(.8);opacity:.5}70%{transform:scale(2.2);opacity:0}100%{transform:scale(2.2);opacity:0}}
 
-/* LAYOUT */
 .layout{display:flex}
 aside{
   width:var(--sidebar-w);flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);
@@ -81,8 +78,7 @@ aside{
 .nav-item{
   display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:9px;cursor:pointer;
   color:var(--ink-3);font-size:13px;font-weight:500;transition:all .18s var(--ease);
-  margin-bottom:2px;border:1px solid transparent;letter-spacing:-.005em;
-  user-select:none;
+  margin-bottom:2px;border:1px solid transparent;letter-spacing:-.005em;user-select:none;
 }
 .nav-item:hover{background:var(--surface-soft);color:var(--ink)}
 .nav-item.active{background:var(--accent-bg);color:var(--accent);border-color:rgba(234,88,12,.2);font-weight:600}
@@ -90,14 +86,12 @@ aside{
 .nav-item.active .nav-num{color:var(--accent)}
 .nav-item.active .nav-text{color:var(--accent)}
 
-/* MOBILE NAV TOGGLE */
 .nav-toggle{display:none;position:fixed;bottom:20px;right:20px;width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;border:none;box-shadow:0 8px 24px rgba(28,25,23,.25),0 2px 6px rgba(28,25,23,.15);z-index:100;cursor:pointer;align-items:center;justify-content:center;transition:transform .2s var(--ease),background .2s var(--ease)}
 .nav-toggle:hover{transform:scale(1.05);background:var(--accent)}
 .nav-toggle svg{width:22px;height:22px}
-.nav-backdrop{display:none;position:fixed;inset:0;background:rgba(28,25,23,.4);z-index:88;opacity:0;transition:opacity .25s var(--ease);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.nav-backdrop{display:none;position:fixed;inset:0;background:rgba(28,25,23,.4);z-index:88;opacity:0;transition:opacity .25s var(--ease);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);pointer-events:none}
 .nav-backdrop.show{opacity:1;pointer-events:all}
 
-/* MAIN */
 main{flex:1;min-width:0;padding:34px 40px 80px;max-width:1180px}
 .panel{display:none;animation:fadein .35s var(--ease-out)}
 .panel.active{display:block}
@@ -114,7 +108,6 @@ main{flex:1;min-width:0;padding:34px 40px 80px;max-width:1180px}
 .sec-title{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
 .sec::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* METRICS */
 .mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
 .mc{padding:18px 18px 16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;position:relative;transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out),border-color .25s var(--ease-out);overflow:hidden}
 .mc:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--border-mid)}
@@ -129,20 +122,15 @@ main{flex:1;min-width:0;padding:34px 40px 80px;max-width:1180px}
 .mv .unit{font-family:var(--body);font-size:13px;color:var(--ink-3);margin-left:4px;font-weight:400}
 .ms{font-size:11.5px;color:var(--ink-3);line-height:1.4;font-weight:400}
 
-/* LAYOUTS */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .four{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 @media(max-width:1080px){.two,.three,.four{grid-template-columns:1fr}}
 
-/* CARDS */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;transition:box-shadow .25s var(--ease-out),border-color .25s var(--ease-out);margin-bottom:18px}
 .card:hover{box-shadow:var(--shadow-sm);border-color:var(--border-mid)}
 .card-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding-bottom:14px;border-bottom:1px solid var(--border);margin-bottom:18px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.card-h-icon{display:inline-flex;align-items:center;gap:8px;color:var(--ink-3)}
-.card-h-icon svg{opacity:.55}
 
-/* TABLE */
 .tbl-wrap{overflow-x:auto;margin:0 -4px;padding:0 4px}
 table{width:100%;border-collapse:collapse;font-size:13px}
 thead th{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:11px 14px;border-bottom:1px solid var(--border);text-align:left;font-weight:600;background:var(--surface-soft);white-space:nowrap}
@@ -154,7 +142,6 @@ tbody tr{transition:background .18s var(--ease)}
 tbody tr:hover{background:var(--surface-soft)}
 .mono-cell{font-family:var(--mono);font-size:12px;font-weight:500}
 
-/* BADGE */
 .b{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;display:inline-flex;align-items:center;gap:5px;border-radius:999px;border:1px solid currentColor;white-space:nowrap}
 .b::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
 .b-ok{color:var(--ok);background:var(--ok-bg);border-color:rgba(5,150,105,.25)}
@@ -165,7 +152,6 @@ tbody tr:hover{background:var(--surface-soft)}
 .b-hi{color:var(--accent);background:var(--accent-bg);border-color:rgba(234,88,12,.25)}
 .b-purple{color:var(--hi);background:var(--hi-bg);border-color:rgba(124,58,237,.25)}
 
-/* TOGGLE GROUP / MODE BTN */
 .mode-row,.tgl-row{display:inline-flex;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:4px;gap:2px;margin-bottom:18px;box-shadow:var(--shadow-sm);flex-wrap:wrap}
 .mbtn,.tgl{font-family:var(--body);font-size:13px;font-weight:500;letter-spacing:-.005em;padding:8px 16px;background:none;border:none;border-radius:8px;cursor:pointer;color:var(--ink-3);transition:all .25s var(--ease);display:inline-flex;align-items:center;gap:8px}
 .mbtn:hover,.tgl:hover{color:var(--ink);background:var(--surface-soft)}
@@ -179,12 +165,10 @@ tbody tr:hover{background:var(--surface-soft)}
 .scen-btn:hover{color:var(--ink);background:var(--surface-soft)}
 .scen-btn.active{background:var(--primary);color:#fff;font-weight:600}
 
-/* LEGEND */
 .leg{display:flex;flex-wrap:wrap;gap:18px;font-family:var(--mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.02em;margin-bottom:14px;font-weight:500}
 .lsq{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:6px;vertical-align:middle}
 .lln{width:22px;height:2px;display:inline-block;margin-right:6px;vertical-align:middle}
 
-/* TIER ROWS */
 .tr-row{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--border);transition:background .2s var(--ease)}
 .tr-row:last-child{border-bottom:none}
 .tr-row:hover{background:var(--surface-soft);margin:0 -10px;padding-left:10px;padding-right:10px;border-radius:8px}
@@ -192,7 +176,6 @@ tbody tr:hover{background:var(--surface-soft)}
 .tr-name{font-size:14px;font-weight:600;color:var(--ink);line-height:1.2;letter-spacing:-.005em}
 .tr-sub{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:3px;letter-spacing:.02em}
 
-/* TIMELINE / TL */
 .tl-list{display:flex;flex-direction:column;gap:0}
 .tl{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid var(--border);align-items:flex-start;transition:background .2s var(--ease)}
 .tl:last-child{border-bottom:none}
@@ -201,10 +184,8 @@ tbody tr:hover{background:var(--surface-soft)}
 .tl-d{font-size:13.5px;color:var(--ink-2);line-height:1.55}
 .tl-d strong{color:var(--ink);font-weight:600}
 
-/* CANVAS */
 .cw{position:relative;width:100%}
 
-/* TOGGLES */
 .tog-list{display:flex;flex-direction:column;gap:0}
 .tog-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:background .2s var(--ease)}
 .tog-row:last-child{border-bottom:none}
@@ -218,7 +199,6 @@ tbody tr:hover{background:var(--surface-soft)}
 .tog-state{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.05em;color:var(--ink-3);min-width:54px;text-align:right;text-transform:uppercase}
 .tog-state.on{color:var(--ok)}
 
-/* HUB CARDS */
 .hub-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:all .25s var(--ease-out);position:relative;overflow:hidden}
 .hub-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--border)}
 .hub-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--border-mid)}
@@ -228,7 +208,6 @@ tbody tr:hover{background:var(--surface-soft)}
 .hub-sub{font-family:var(--mono);font-size:9.5px;font-weight:500;color:var(--ink-3);margin-top:4px;letter-spacing:.1em;text-transform:uppercase}
 .hub-card-bottom{margin-top:10px}
 
-/* PHASE CARDS */
 .phase-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 16px;cursor:pointer;transition:all .25s var(--ease-out);position:relative;overflow:hidden}
 .phase-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--border)}
 .phase-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--border-mid)}
@@ -245,34 +224,29 @@ tbody tr:hover{background:var(--surface-soft)}
 .phase-desc{font-size:12px;color:var(--ink-3);margin-top:4px;font-weight:400}
 .phase-pct{font-family:var(--display);font-size:34px;font-weight:600;margin-top:14px;line-height:1;letter-spacing:-.025em;font-variation-settings:"opsz" 32}
 
-/* PROGRESS BAR */
 .prog{background:var(--bg-2);border-radius:999px;height:8px;overflow:hidden;position:relative}
 .prog-fill{height:100%;border-radius:999px;transition:width .8s var(--ease-out);background:linear-gradient(90deg,var(--ok),var(--primary-2));position:relative;overflow:hidden}
 .prog-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shimmer 2.5s infinite}
 @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 
-/* INLINE BAR */
 .bar-row{display:flex;align-items:center;gap:10px;min-width:140px}
 .bar-track{flex:1;height:7px;background:var(--bg-2);border-radius:99px;overflow:hidden}
 .bar-fill{height:100%;border-radius:99px;transition:width .4s var(--ease-out)}
 .bar-pct{font-family:var(--mono);font-size:11px;font-weight:600;min-width:36px;text-align:right}
 
-/* DETAIL ROWS */
 .drow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:13.5px;gap:14px;align-items:center}
 .drow:last-child{border-bottom:none}
 .dkey{color:var(--ink-3);font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;flex-shrink:0;font-weight:500}
 .dval{font-weight:500;color:var(--ink);text-align:right}
 
-/* SLIDERS */
 .ctrl-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:12px}
 .ctrl-label{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink-3);min-width:160px;text-transform:uppercase;font-weight:500}
 .ctrl-val{font-family:var(--mono);font-size:12px;font-weight:600;min-width:48px;text-align:right;color:var(--accent);background:var(--accent-bg);padding:3px 8px;border-radius:6px}
 input[type=range]{flex:1;min-width:100px;height:4px;-webkit-appearance:none;appearance:none;background:var(--bg-2);border-radius:999px;cursor:pointer;outline:none}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .15s var(--ease)}
 input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
-input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);cursor:pointer;box-shadow:var(--shadow-sm)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--surface);cursor:pointer}
 
-/* MILESTONES */
 .ms-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--border);font-size:13.5px;transition:background .2s var(--ease)}
 .ms-row:last-child{border-bottom:none}
 .ms-row:hover{background:var(--surface-soft);margin:0 -10px;padding-left:10px;padding-right:10px;border-radius:8px}
@@ -280,29 +254,23 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 .ms-dot.done{background:var(--ok);border-color:var(--ok);box-shadow:0 0 0 3px var(--ok-soft)}
 .ms-text{color:var(--ink-2);line-height:1.5;flex:1}
 
-/* CAP BARS */
 .cap-row{margin-bottom:14px}
 .cap-row:last-child{margin-bottom:0}
 .cap-head{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:5px}
 .cap-name{color:var(--ink-3);font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;font-size:10px;font-weight:600}
 .cap-val{font-weight:600;color:var(--ink);font-family:var(--mono);font-size:11px}
 
-/* NOTE */
 .note-box{font-size:13px;color:var(--ink-2);line-height:1.6;border-left:3px solid var(--accent);padding:14px 18px;background:var(--accent-bg);border-radius:0 10px 10px 0;margin-bottom:18px}
 .note-box strong{color:var(--ink);font-weight:600}
 
-/* TRANS COL */
 .trans-col{padding:14px 16px;border-left:3px solid;background:var(--surface-soft);border-radius:0 10px 10px 0}
 .trans-col-title{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;margin-bottom:10px;text-transform:uppercase}
 .trans-col-item{font-size:12.5px;color:var(--ink-2);padding:4px 0;letter-spacing:-.005em}
 .trans-col-item::before{content:'→ ';color:var(--ink-4);font-family:var(--mono)}
 
-/* SELECT */
 select{font-family:var(--body);font-size:13px;font-weight:500;padding:8px 32px 8px 12px;border:1px solid var(--border);background:var(--surface) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%2378716c' stroke-width='1.5'><path d='M3 5l3 3 3-3'/></svg>") no-repeat right 10px center;background-size:12px;color:var(--ink);cursor:pointer;border-radius:8px;appearance:none;-webkit-appearance:none;transition:border-color .2s var(--ease)}
 select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
-select:hover{border-color:var(--border-mid)}
 
-/* CONTINGENCY CARDS */
 .cont-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;transition:box-shadow .25s var(--ease-out),border-color .25s var(--ease-out)}
 .cont-card:hover{box-shadow:var(--shadow-md);border-color:var(--border-mid)}
 .cont-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px}
@@ -315,7 +283,6 @@ select:hover{border-color:var(--border-mid)}
 .cont-desc{font-size:12.5px;color:var(--ink-2);line-height:1.6;margin-bottom:12px}
 .cont-desc strong{color:var(--ink);font-weight:600}
 
-/* STEP */
 .steps{display:flex;flex-direction:column;gap:0}
 .step{display:flex;gap:16px;position:relative}
 .step:not(:last-child)::after{content:'';position:absolute;left:21px;top:46px;bottom:-12px;width:2px;background:linear-gradient(180deg,var(--border-mid),var(--border));border-radius:1px}
@@ -327,24 +294,19 @@ select:hover{border-color:var(--border-mid)}
 .step-tag{font-family:var(--mono);font-size:9.5px;color:var(--ink-2);background:var(--surface-soft);border:1px solid var(--border);padding:3px 8px;border-radius:5px;letter-spacing:.02em;font-weight:500}
 
 .phase-cell{font-size:9.5px}
-.kind-icon{width:14px;height:14px;flex-shrink:0;color:var(--ink-3)}
 
-/* FOOTER */
 .footer{background:linear-gradient(135deg,#0c0a09,#1c1917);position:relative;padding:32px 40px;text-align:center;border-top:1px solid #292524}
 .footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent) 30%,var(--primary) 70%,transparent)}
 .footer-brand{font-family:var(--display);font-size:18px;font-weight:600;color:#fff;letter-spacing:-.015em;margin-bottom:6px}
 .footer-meta{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.04em;line-height:1.7}
 
-/* SCROLLBAR */
 ::-webkit-scrollbar{width:10px;height:10px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--border-mid);border-radius:999px;border:2px solid var(--bg)}
 ::-webkit-scrollbar-thumb:hover{background:var(--border-strong)}
 aside::-webkit-scrollbar-thumb{border-color:var(--surface)}
-
 canvas{user-select:none;-webkit-user-drag:none}
 
-/* RESPONSIVE */
 @media(max-width:980px){
   .nav-backdrop{display:block}
   aside{position:fixed;top:0;left:0;height:100vh;transform:translateX(-100%);transition:transform .3s var(--ease);box-shadow:var(--shadow-lg);background:var(--surface);width:280px;z-index:90;padding-top:18px}
@@ -366,29 +328,14 @@ canvas{user-select:none;-webkit-user-drag:none}
   .page-intro h2{font-size:24px}
   .page-intro p{font-size:13px}
   .mv{font-size:22px}
-  .mv .unit{font-size:11px}
   .mg{grid-template-columns:repeat(2,1fr);gap:10px}
   .mc{padding:14px 14px 12px}
-  .ml{font-size:9px;margin-bottom:8px}
-  .ms{font-size:10.5px}
   .card{padding:16px;border-radius:12px}
-  .card-h{font-size:10px;padding-bottom:12px;margin-bottom:14px}
   .cont-freqs{grid-template-columns:1fr 1fr;gap:10px}
-  .freq-block{padding:10px 12px}
   .freq-val{font-size:20px}
   .step{gap:12px}
   .step-badge{width:36px;height:36px;font-size:9px}
   .step:not(:last-child)::after{left:18px;top:40px}
-  .step-title{font-size:14px}
-  .step-desc{font-size:12px}
-  .step-tag{font-size:9px;padding:2px 6px}
-  .ctrl-row{gap:10px}
-  .ctrl-label{min-width:130px;font-size:9.5px}
-  .scen-btn,.tgl,.mbtn{padding:7px 11px;font-size:11.5px}
-  .nav-num{font-size:9.5px;min-width:28px}
-  .page-intro{margin-bottom:22px}
-  .sec{margin:24px 0 12px}
-  .sec-title{font-size:11.5px}
 }
 @media(max-width:560px){
   .hdr h1{font-size:18px}
@@ -398,25 +345,10 @@ canvas{user-select:none;-webkit-user-drag:none}
   .mv{font-size:19px}
   thead th,tbody td{padding:9px 8px;font-size:11.5px}
   thead th{font-size:9px}
-  .mono-cell{font-size:11px}
   .b{font-size:8.5px;padding:3px 7px}
-  .hub-card{padding:13px}
-  .hub-name{font-size:15px}
-  .hub-sub{font-size:8.5px}
-  .phase-card{padding:14px 12px}
-  .phase-yrs{font-size:15px}
-  .phase-pct{font-size:26px}
-  .phase-num{font-size:9px}
-  .phase-desc{font-size:10.5px}
   .four{grid-template-columns:repeat(2,1fr)!important}
   .leg{gap:10px;font-size:9.5px}
-  .ticker-item{padding:0 9px;font-size:10px}
-  .footer-brand{font-size:16px}
-  .footer-meta{font-size:10.5px}
-  .nav-toggle{width:44px;height:44px;font-size:16px;bottom:14px;right:14px}
   .cont-freqs{grid-template-columns:1fr}
-  .freq-val{font-size:22px}
-  .freq-block{padding:11px 13px}
   .scen-row{flex-wrap:wrap}
   .scen-btn{flex:1;text-align:center}
   .tgl-row,.mode-row{flex-wrap:wrap}
@@ -426,7 +358,6 @@ canvas{user-select:none;-webkit-user-drag:none}
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="hdr">
   <div class="hdr-inner">
     <div class="hdr-left">
@@ -446,7 +377,6 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </header>
 
-<!-- LIVE TICKER -->
 <div class="ticker">
   <span class="ticker-item"><span class="ticker-dot"></span><strong>LIVE</strong></span>
   <span class="ticker-item">Frekuensi <strong>50,00 Hz</strong></span>
@@ -496,7 +426,7 @@ canvas{user-select:none;-webkit-user-drag:none}
 
   <main>
 
-<!-- ═════ § 1 IKHTISAR SISTEM ═════ -->
+<!-- § 1 -->
 <section class="panel active" id="p0">
   <div class="page-intro">
     <span class="page-intro-tag">§ 01 / Overview</span>
@@ -547,7 +477,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 2 PROFIL TEGANGAN BUS ═════ -->
+<!-- § 2 -->
 <section class="panel" id="p1">
   <div class="page-intro">
     <span class="page-intro-tag">§ 02 / Bus voltage</span>
@@ -555,8 +485,8 @@ canvas{user-select:none;-webkit-user-drag:none}
     <p>Kasus beban puncak 150 kV — perbandingan sebelum dan sesudah implementasi NEXGRID Intel.</p>
   </div>
   <div class="tgl-row" id="bus-tgl">
-    <button class="tgl active" onclick="switchBus('before',this)">Eksisting 2026</button>
-    <button class="tgl" onclick="switchBus('after',this)">NEXGRID Intel 2036</button>
+    <button class="tgl active" id="bus-btn-before" onclick="switchBus('before')">Eksisting 2026</button>
+    <button class="tgl" id="bus-btn-after" onclick="switchBus('after')">NEXGRID Intel 2036</button>
   </div>
   <div id="bus-before">
     <div class="mg" style="margin-bottom:18px">
@@ -619,7 +549,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 3 PEMBEBANAN TRANSMISI ═════ -->
+<!-- § 3 -->
 <section class="panel" id="p2">
   <div class="page-intro">
     <span class="page-intro-tag">§ 03 / Transmission loading</span>
@@ -627,8 +557,8 @@ canvas{user-select:none;-webkit-user-drag:none}
     <p>10 saluran utama Pulau Nesconusa — toggle untuk lihat status loading sebelum dan sesudah penambahan EBT distribusi.</p>
   </div>
   <div class="tgl-row" id="trans-tgl">
-    <button class="tgl active" onclick="switchTrans('before',this)">Eksisting 2026</button>
-    <button class="tgl" onclick="switchTrans('after',this)">NEXGRID Intel 2036</button>
+    <button class="tgl active" id="trans-btn-before" onclick="switchTrans('before')">Eksisting 2026</button>
+    <button class="tgl" id="trans-btn-after" onclick="switchTrans('after')">NEXGRID Intel 2036</button>
   </div>
   <div id="trans-before">
     <div class="mg" style="margin-bottom:18px">
@@ -666,7 +596,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 4 SKEMA OPERASI ═════ -->
+<!-- § 4 -->
 <section class="panel" id="p3">
   <div class="page-intro">
     <span class="page-intro-tag">§ 04 / Operasi micro hub</span>
@@ -731,7 +661,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 5 RESPONS FREKUENSI ═════ -->
+<!-- § 5 -->
 <section class="panel" id="p4">
   <div class="page-intro">
     <span class="page-intro-tag">§ 05 / Stabilitas dinamik</span>
@@ -793,16 +723,14 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 6 PRIORITAS BEBAN ═════ -->
+<!-- § 6 -->
 <section class="panel" id="p5">
   <div class="page-intro">
     <span class="page-intro-tag">§ 06 / Load shedding adaptif</span>
     <h2>Skema prioritas <em>beban</em></h2>
     <p>Skenario islanding Nesco-Pura · load shedding otomatis &lt;200 ms pasca deteksi gangguan.</p>
   </div>
-  <div class="note-box">
-    Beban total <strong>~60 MW</strong>. BESS 400 MWh mendukung Tier 1+2. Tier 3 diputus via load shedding otomatis untuk memastikan kontinuitas pelayanan publik kritis selama islanding.
-  </div>
+  <div class="note-box">Beban total <strong>~60 MW</strong>. BESS 400 MWh mendukung Tier 1+2. Tier 3 diputus via load shedding otomatis untuk memastikan kontinuitas pelayanan publik kritis selama islanding.</div>
   <div class="two">
     <div>
       <div class="sec" style="margin-top:0"><span class="sec-num">§ 6.1</span><span class="sec-title">Rincian load prioritization</span></div>
@@ -843,7 +771,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 7 KONTRIBUSI DAYA ═════ -->
+<!-- § 7 -->
 <section class="panel" id="p6">
   <div class="page-intro">
     <span class="page-intro-tag">§ 07 / Dispatch energi</span>
@@ -881,7 +809,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 8 SOC BESS ═════ -->
+<!-- § 8 -->
 <section class="panel" id="p7">
   <div class="page-intro">
     <span class="page-intro-tag">§ 08 / Energy storage</span>
@@ -918,7 +846,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 9 KONTINGENSI ═════ -->
+<!-- § 9 -->
 <section class="panel" id="p8">
   <div class="page-intro">
     <span class="page-intro-tag">§ 09 / Kontingensi N-1 / N-2</span>
@@ -927,101 +855,61 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
   <div class="two">
     <div class="cont-card">
-      <div class="cont-head">
-        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span class="b b-crit">N-1</span>
-          <span class="cont-title">Trip PLTU Sektor-1 (500 MW)</span>
-        </div>
-      </div>
+      <div class="cont-head"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="b b-crit">N-1</span><span class="cont-title">Trip PLTU Sektor-1 (500 MW)</span></div></div>
       <div class="cont-freqs">
         <div class="freq-block"><span class="freq-block-label">Tanpa NEXGRID</span><div class="freq-val" style="color:var(--crit)">47,31<span class="unit">Hz</span></div><div style="margin-top:8px"><span class="b b-crit">Blackout parsial</span></div></div>
         <div class="freq-block"><span class="freq-block-label">Dengan NEXGRID</span><div class="freq-val" style="color:var(--ok)">49,51<span class="unit">Hz</span></div><div style="margin-top:8px"><span class="b b-ok">Aman · 3,3 s</span></div></div>
       </div>
       <p class="cont-desc">PLTU 40% kapasitas. Trip memicu ROCOF tinggi, UFLS aktif, beban lepas <strong>320 MW</strong> tanpa NEXGRID. Dengan NEXGRID: BESS 2.020 MWh + GFM inverter merespons &lt;0,1 s, frekuensi pulih dalam 3,3 s.</p>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>Bus</th><th>Sebelum</th><th>Sesudah</th><th>Kondisi</th></tr></thead>
-          <tbody>
-            <tr><td>KITN-Barat</td><td class="mono-cell">1,000</td><td class="mono-cell" style="color:var(--warn)">→ 0,891</td><td><span class="b b-warn">Voltage dip</span></td></tr>
-            <tr><td>Central-Metropolitan</td><td class="mono-cell">0,934</td><td class="mono-cell" style="color:var(--crit)">→ 0,841</td><td><span class="b b-crit">Kritis</span></td></tr>
-            <tr><td>Penyangga Riviera</td><td class="mono-cell">0,912</td><td class="mono-cell" style="color:var(--crit)">→ 0,843</td><td><span class="b b-crit">Kritis</span></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <div class="tbl-wrap"><table><thead><tr><th>Bus</th><th>Sebelum</th><th>Sesudah</th><th>Kondisi</th></tr></thead><tbody>
+        <tr><td>KITN-Barat</td><td class="mono-cell">1,000</td><td class="mono-cell" style="color:var(--warn)">→ 0,891</td><td><span class="b b-warn">Voltage dip</span></td></tr>
+        <tr><td>Central-Metropolitan</td><td class="mono-cell">0,934</td><td class="mono-cell" style="color:var(--crit)">→ 0,841</td><td><span class="b b-crit">Kritis</span></td></tr>
+        <tr><td>Penyangga Riviera</td><td class="mono-cell">0,912</td><td class="mono-cell" style="color:var(--crit)">→ 0,843</td><td><span class="b b-crit">Kritis</span></td></tr>
+      </tbody></table></div>
     </div>
     <div class="cont-card">
-      <div class="cont-head">
-        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span class="b b-warn">N-1</span>
-          <span class="cont-title">Trip PLTGU Blok-1 (450 MW)</span>
-        </div>
-      </div>
+      <div class="cont-head"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="b b-warn">N-1</span><span class="cont-title">Trip PLTGU Blok-1 (450 MW)</span></div></div>
       <div class="cont-freqs">
         <div class="freq-block"><span class="freq-block-label">Tanpa NEXGRID</span><div class="freq-val" style="color:var(--warn)">47,89<span class="unit">Hz</span></div><div style="margin-top:8px"><span class="b b-crit">Kritis · 18 s</span></div></div>
         <div class="freq-block"><span class="freq-block-label">Dengan NEXGRID</span><div class="freq-val" style="color:var(--ok)">49,43<span class="unit">Hz</span></div><div style="margin-top:8px"><span class="b b-ok">Aman · 4,1 s</span></div></div>
       </div>
       <p class="cont-desc">PLTGU 47% kapasitas. Tanpa NEXGRID: UFLS aktif, 240 MW beban lepas. Dengan NEXGRID: GFM inverter di GI Central menyediakan referensi frekuensi instan, <strong>0 MW beban lepas</strong>.</p>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>Bus</th><th>Dengan NEXGRID</th><th>Keterangan</th></tr></thead>
-          <tbody>
-            <tr><td>GI Central</td><td class="mono-cell" style="color:var(--ok)">0,991</td><td><span class="b b-ok">BESS+GFM</span></td></tr>
-            <tr><td>Central-Metropolitan</td><td class="mono-cell" style="color:var(--ok)">0,978</td><td><span class="b b-info">STATCOM</span></td></tr>
-            <tr><td>Puspem-Utama</td><td class="mono-cell" style="color:var(--ok)">0,983</td><td><span class="b b-ok">Stabil</span></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <div class="tbl-wrap"><table><thead><tr><th>Bus</th><th>Dengan NEXGRID</th><th>Keterangan</th></tr></thead><tbody>
+        <tr><td>GI Central</td><td class="mono-cell" style="color:var(--ok)">0,991</td><td><span class="b b-ok">BESS+GFM</span></td></tr>
+        <tr><td>Central-Metropolitan</td><td class="mono-cell" style="color:var(--ok)">0,978</td><td><span class="b b-info">STATCOM</span></td></tr>
+        <tr><td>Puspem-Utama</td><td class="mono-cell" style="color:var(--ok)">0,983</td><td><span class="b b-ok">Stabil</span></td></tr>
+      </tbody></table></div>
     </div>
     <div class="cont-card">
-      <div class="cont-head">
-        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span class="b b-warn">N-1</span>
-          <span class="cont-title">Putus saluran Lingga → Puspem</span>
-        </div>
-      </div>
+      <div class="cont-head"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="b b-warn">N-1</span><span class="cont-title">Putus saluran Lingga → Puspem</span></div></div>
       <div class="cont-freqs">
         <div class="freq-block"><span class="freq-block-label">Tanpa NEXGRID</span><div class="freq-val" style="color:var(--crit)">49,72<span class="unit">Hz</span></div><div style="margin-top:8px"><span class="b b-crit">Pemadaman Puspem</span></div></div>
         <div class="freq-block"><span class="freq-block-label">Dengan NEXGRID</span><div class="freq-val" style="color:var(--ok)">49,88<span class="unit">Hz</span></div><div style="margin-top:8px"><span class="b b-ok">Islanding &lt;1 s</span></div></div>
       </div>
       <p class="cont-desc">Dengan NEXGRID: Micro Hub deteksi &lt;100 ms, island mode aktif, <strong>0 detik padam</strong>.</p>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>Bus</th><th>Dengan NEXGRID</th><th>Keterangan</th></tr></thead>
-          <tbody>
-            <tr><td>Puspem-Utama</td><td class="mono-cell" style="color:var(--ok)">0,983</td><td><span class="b b-info">Island mode</span></td></tr>
-            <tr><td>Lingga-Transmisi</td><td class="mono-cell" style="color:var(--ok)">1,000</td><td><span class="b b-ok">Tidak terpengaruh</span></td></tr>
-            <tr><td>Penyangga Riviera</td><td class="mono-cell" style="color:var(--warn)">0,971</td><td><span class="b b-ok">Sedikit drop</span></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <div class="tbl-wrap"><table><thead><tr><th>Bus</th><th>Dengan NEXGRID</th><th>Keterangan</th></tr></thead><tbody>
+        <tr><td>Puspem-Utama</td><td class="mono-cell" style="color:var(--ok)">0,983</td><td><span class="b b-info">Island mode</span></td></tr>
+        <tr><td>Lingga-Transmisi</td><td class="mono-cell" style="color:var(--ok)">1,000</td><td><span class="b b-ok">Tidak terpengaruh</span></td></tr>
+        <tr><td>Penyangga Riviera</td><td class="mono-cell" style="color:var(--warn)">0,971</td><td><span class="b b-ok">Sedikit drop</span></td></tr>
+      </tbody></table></div>
     </div>
     <div class="cont-card">
-      <div class="cont-head">
-        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span class="b b-crit">N-2</span>
-          <span class="cont-title">PLTU + putus saluran Central-Metro</span>
-        </div>
-      </div>
+      <div class="cont-head"><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="b b-crit">N-2</span><span class="cont-title">PLTU + putus saluran Central-Metro</span></div></div>
       <div class="cont-freqs">
         <div class="freq-block"><span class="freq-block-label">Tanpa NEXGRID</span><div class="freq-val" style="color:var(--crit)">46,51<span class="unit">Hz</span></div><div style="margin-top:8px"><span class="b b-crit">Blackout sistem</span></div></div>
         <div class="freq-block"><span class="freq-block-label">Dengan NEXGRID</span><div class="freq-val" style="color:var(--warn)">49,12<span class="unit">Hz</span></div><div style="margin-top:8px"><span class="b b-warn">Terkendali · 6,8 s</span></div></div>
       </div>
       <p class="cont-desc">Kejadian N-2 katastrofik. Tanpa NEXGRID: blackout total. Dengan NEXGRID: beban lepas hanya <strong>80 MW</strong>.</p>
-      <div class="tbl-wrap">
-        <table>
-          <thead><tr><th>Bus</th><th>Tanpa NEXGRID</th><th>Dengan NEXGRID</th></tr></thead>
-          <tbody>
-            <tr><td>KITN-Barat</td><td class="mono-cell" style="color:var(--crit)">→ 0,764</td><td class="mono-cell" style="color:var(--warn)">0,981</td></tr>
-            <tr><td>Central-Metro</td><td class="mono-cell" style="color:var(--crit)">→ 0,000</td><td class="mono-cell" style="color:var(--ok)">0,961</td></tr>
-            <tr><td>Puspem-Utama</td><td class="mono-cell" style="color:var(--crit)">→ 0,731</td><td class="mono-cell" style="color:var(--ok)">0,983 (island)</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <div class="tbl-wrap"><table><thead><tr><th>Bus</th><th>Tanpa NEXGRID</th><th>Dengan NEXGRID</th></tr></thead><tbody>
+        <tr><td>KITN-Barat</td><td class="mono-cell" style="color:var(--crit)">→ 0,764</td><td class="mono-cell" style="color:var(--warn)">0,981</td></tr>
+        <tr><td>Central-Metro</td><td class="mono-cell" style="color:var(--crit)">→ 0,000</td><td class="mono-cell" style="color:var(--ok)">0,961</td></tr>
+        <tr><td>Puspem-Utama</td><td class="mono-cell" style="color:var(--crit)">→ 0,731</td><td class="mono-cell" style="color:var(--ok)">0,983 (island)</td></tr>
+      </tbody></table></div>
     </div>
   </div>
 </section>
 
-<!-- ═════ § 10 SKEMA ISLANDING ═════ -->
+<!-- § 10 -->
 <section class="panel" id="p9">
   <div class="page-intro">
     <span class="page-intro-tag">§ 10 / Adaptive islanding</span>
@@ -1048,7 +936,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 11 STRATEGI EBT & GFM ═════ -->
+<!-- § 11 -->
 <section class="panel" id="p10">
   <div class="page-intro">
     <span class="page-intro-tag">§ 11 / Inverter strategy</span>
@@ -1088,7 +976,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 12 POTENSI EBT ═════ -->
+<!-- § 12 -->
 <section class="panel" id="p11">
   <div class="page-intro">
     <span class="page-intro-tag">§ 12 / Sumber daya alam</span>
@@ -1133,7 +1021,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 13 PROYEKSI BEBAN ═════ -->
+<!-- § 13 -->
 <section class="panel" id="p12">
   <div class="page-intro">
     <span class="page-intro-tag">§ 13 / Demand growth</span>
@@ -1185,7 +1073,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 14 MICRO HUB DETAIL ═════ -->
+<!-- § 14 -->
 <section class="panel" id="p13">
   <div class="page-intro">
     <span class="page-intro-tag">§ 14 / Arsitektur sistem</span>
@@ -1296,7 +1184,7 @@ canvas{user-select:none;-webkit-user-drag:none}
   </div>
 </section>
 
-<!-- ═════ § 15 ROADMAP ═════ -->
+<!-- § 15 -->
 <section class="panel" id="p14">
   <div class="page-intro">
     <span class="page-intro-tag">§ 15 / Implementasi 10 tahun</span>
@@ -1304,10 +1192,10 @@ canvas{user-select:none;-webkit-user-drag:none}
     <p>Klik fase untuk melihat detail milestone dan target kapasitas terpasang setiap titik waktu.</p>
   </div>
   <div class="four" style="margin-bottom:20px">
-    <div class="phase-card p1 active" id="rpc-0" onclick="roadSelectPhase(0)"><div class="phase-num" style="color:var(--info)">Fase 01</div><div class="phase-yrs">2026–2028</div><div class="phase-desc">Stabilisasi awal</div><div class="phase-pct" style="color:var(--info)">~25%</div><span class="b b-info" style="margin-top:10px">Foundation</span></div>
-    <div class="phase-card p2" id="rpc-1" onclick="roadSelectPhase(1)"><div class="phase-num" style="color:var(--warn)">Fase 02</div><div class="phase-yrs">2028–2030</div><div class="phase-desc">Ekspansi EBT</div><div class="phase-pct" style="color:var(--warn)">~58%</div><span class="b b-warn" style="margin-top:10px">Scale-up</span></div>
-    <div class="phase-card p3" id="rpc-2" onclick="roadSelectPhase(2)"><div class="phase-num" style="color:var(--accent)">Fase 03</div><div class="phase-yrs">2030–2033</div><div class="phase-desc">Geothermal + GFM</div><div class="phase-pct" style="color:var(--accent)">~87%</div><span class="b b-hi" style="margin-top:10px">Maturity</span></div>
-    <div class="phase-card p4" id="rpc-3" onclick="roadSelectPhase(3)"><div class="phase-num" style="color:var(--ok)">Fase 04</div><div class="phase-yrs">2033–2036</div><div class="phase-desc">100% EBT</div><div class="phase-pct" style="color:var(--ok)">100%</div><span class="b b-ok" style="margin-top:10px">Net-zero</span></div>
+    <div class="phase-card p1 active" id="rpc-0" onclick="roadSelectPhase(0)"><div class="phase-num" style="color:var(--info)">Fase 01</div><div class="phase-yrs">2026–2028</div><div class="phase-desc">Stabilisasi awal</div><div class="phase-pct" style="color:var(--info)">~25%</div><span class="b b-info" style="margin-top:10px;display:inline-flex">Foundation</span></div>
+    <div class="phase-card p2" id="rpc-1" onclick="roadSelectPhase(1)"><div class="phase-num" style="color:var(--warn)">Fase 02</div><div class="phase-yrs">2028–2030</div><div class="phase-desc">Ekspansi EBT</div><div class="phase-pct" style="color:var(--warn)">~58%</div><span class="b b-warn" style="margin-top:10px;display:inline-flex">Scale-up</span></div>
+    <div class="phase-card p3" id="rpc-2" onclick="roadSelectPhase(2)"><div class="phase-num" style="color:var(--accent)">Fase 03</div><div class="phase-yrs">2030–2033</div><div class="phase-desc">Geothermal + GFM</div><div class="phase-pct" style="color:var(--accent)">~87%</div><span class="b b-hi" style="margin-top:10px;display:inline-flex">Maturity</span></div>
+    <div class="phase-card p4" id="rpc-3" onclick="roadSelectPhase(3)"><div class="phase-num" style="color:var(--ok)">Fase 04</div><div class="phase-yrs">2033–2036</div><div class="phase-desc">100% EBT</div><div class="phase-pct" style="color:var(--ok)">100%</div><span class="b b-ok" style="margin-top:10px;display:inline-flex">Net-zero</span></div>
   </div>
   <div class="two">
     <div class="card" id="road-milestone-panel">
@@ -1349,18 +1237,12 @@ canvas{user-select:none;-webkit-user-drag:none}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-/* ════════════════════════════════════════════
-   NAV / SIDEBAR — FIXED VERSION
-   Key fixes:
-   1. Chart builds wrapped in requestAnimationFrame so Canvas has dimensions
-   2. fillTrans() called on init (not just lazy)
-   3. Mobile backdrop pointer-events fixed
-   4. Removed inline onclick from toggle button; use addEventListener
-   ════════════════════════════════════════════ */
-
-const sidebar    = document.getElementById('sidebar');
-const navToggle  = document.getElementById('navToggle');
-const navBackdrop= document.getElementById('navBackdrop');
+/* ═══════════════════════════════════════════
+   NAV / SIDEBAR
+   ═══════════════════════════════════════════ */
+const sidebar     = document.getElementById('sidebar');
+const navToggle   = document.getElementById('navToggle');
+const navBackdrop = document.getElementById('navBackdrop');
 
 function toggleNav() {
   const isOpen = sidebar.classList.toggle('open');
@@ -1370,24 +1252,33 @@ function closeNav() {
   sidebar.classList.remove('open');
   navBackdrop.classList.remove('show');
 }
-
 navToggle.addEventListener('click', toggleNav);
 navBackdrop.addEventListener('click', closeNav);
 
-// Lazy-build flags
-const built = {};
+/* chart instance registry — keyed by canvas id */
+const chartReg = {};
 
-// Run fn after a short delay so the newly-visible panel has correct dimensions
+/* destroy + recreate helper */
+function mkChart(id, cfg) {
+  if (chartReg[id]) { chartReg[id].destroy(); }
+  chartReg[id] = new Chart(document.getElementById(id), cfg);
+  return chartReg[id];
+}
+
+/* run fn after two animation frames so newly-visible canvas has dimensions */
 function afterVisible(fn) {
   requestAnimationFrame(() => requestAnimationFrame(fn));
 }
 
-document.querySelectorAll('.nav-item').forEach((item) => {
-  item.addEventListener('click', (e) => {
+/* build-once flags */
+const built = {};
+
+/* tab switch */
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', e => {
     e.stopPropagation();
     const idx = parseInt(item.dataset.tab, 10);
 
-    // Switch active panel
     document.querySelectorAll('.panel').forEach((p, j) =>
       p.classList.toggle('active', j === idx));
     document.querySelectorAll('.nav-item').forEach((n, j) =>
@@ -1396,25 +1287,25 @@ document.querySelectorAll('.nav-item').forEach((item) => {
     closeNav();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Lazy chart builds — always inside afterVisible()
     afterVisible(() => {
-      if (idx === 0 && !built._ov) { buildOverview();    built._ov = 1; }
-      if (idx === 1 && !built._bv) { buildBusVolt();     built._bv = 1; }
-      if (idx === 2 && !built._tr) { fillTrans();        built._tr = 1; }
-      if (idx === 4 && !built._fr) { freqRefresh(); buildVolt(); built._fr = 1; }
-      if (idx === 5 && !built._pi) { buildPie();         built._pi = 1; }
-      if (idx === 6 && !built._pw) { buildPow();         built._pw = 1; }
-      if (idx === 7 && !built._sc) { buildSoc();         built._sc = 1; }
-      if (idx === 10 && !built._eb) { buildEbtChart();   built._eb = 1; }
-      if (idx === 11 && !built._rn) { buildRenewable();  built._rn = 1; }
-      if (idx === 12 && !built._dm) { buildDemand();     built._dm = 1; }
-      if (idx === 13 && !built._hb) { buildHubEbtChart(); built._hb = 1; }
-      if (idx === 14 && !built._rd) { buildRoadCharts(); built._rd = 1; }
+      if (idx === 0  && !built._ov) { buildOverview();    built._ov = 1; }
+      if (idx === 1  && !built._bv) { buildBusVolt();     built._bv = 1; }
+      if (idx === 2  && !built._tr) { fillTrans();        built._tr = 1; }
+      if (idx === 3  && !built._md) { setMode('grid');    built._md = 1; }
+      if (idx === 4  && !built._fr) { freqRefresh(); buildVolt(); built._fr = 1; }
+      if (idx === 5  && !built._pi) { buildPie();         built._pi = 1; }
+      if (idx === 6  && !built._pw) { buildPow();         built._pw = 1; }
+      if (idx === 7  && !built._sc) { buildSoc();         built._sc = 1; }
+      if (idx === 10 && !built._eb) { buildEbtChart();    built._eb = 1; }
+      if (idx === 11 && !built._rn) { buildRenewable();   built._rn = 1; }
+      if (idx === 12 && !built._dm) { buildDemand();      built._dm = 1; }
+      if (idx === 13 && !built._hb) { hubRenderDetail(0); hubSetPhase('4'); buildHubEbtChart(); built._hb = 1; }
+      if (idx === 14 && !built._rd) { buildRoadCharts();  built._rd = 1; }
     });
   });
 });
 
-/* ═════ CHART DEFAULTS ═════ */
+/* ═══════ CHART DEFAULTS ═══════ */
 Chart.defaults.font.family = "'Plus Jakarta Sans',system-ui,sans-serif";
 Chart.defaults.font.size   = 11;
 Chart.defaults.color       = '#78716c';
@@ -1424,92 +1315,95 @@ const C = {
   accent:'#ea580c', primary:'#0f766e', rule:'#a8a29e', rule2:'#d6d3d1',
   ink:'#1c1917', ink3:'#78716c', hi:'#7c3aed'
 };
-const GRID_COLOR = 'rgba(168,162,158,.18)';
+const GC = 'rgba(168,162,158,.18)';
 
-/* ═════ § 1 OVERVIEW CHART ═════ */
+/* ═══════ § 1 OVERVIEW ═══════ */
 function buildOverview() {
-  new Chart(document.getElementById('overviewChart'), {
-    type: 'bar',
-    data: {
-      labels: ['KITN-Barat','KITN-Timur','Central','Central-Metro','Puspem','Lingga','Riviera'],
-      datasets: [{ data: [210,120,90,180,60,30,110],
-        backgroundColor: ['#2563eb','#2563eb','#2563eb','#dc2626','#059669','#059669','#d97706'],
-        borderRadius: 6, borderSkipped: false }]
+  mkChart('overviewChart', {
+    type:'bar',
+    data:{
+      labels:['KITN-Barat','KITN-Timur','Central','Central-Metro','Puspem','Lingga','Riviera'],
+      datasets:[{ data:[210,120,90,180,60,30,110],
+        backgroundColor:['#2563eb','#2563eb','#2563eb','#dc2626','#059669','#059669','#d97706'],
+        borderRadius:6, borderSkipped:false }]
     },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.parsed.y+' MW' } } },
-      scales: {
-        y: { min:0, max:250, grid:{ color:GRID_COLOR }, ticks:{ callback: v=>v+' MW' }, border:{ color:C.rule2 } },
-        x: { grid:{ display:false }, ticks:{ maxRotation:35 }, border:{ color:C.rule2 } }
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false}, tooltip:{callbacks:{label:c=>c.parsed.y+' MW'}}},
+      scales:{
+        y:{min:0,max:250,grid:{color:GC},ticks:{callback:v=>v+' MW'},border:{color:C.rule2}},
+        x:{grid:{display:false},ticks:{maxRotation:35},border:{color:C.rule2}}
       }
     }
   });
 }
-// Build overview on page load (tab 0 is active by default)
+/* auto-build tab 0 on load */
 afterVisible(() => { buildOverview(); built._ov = 1; });
 
-/* ═════ § 2 BUS TOGGLE + CHART ═════ */
-function switchBus(m, el) {
-  document.getElementById('bus-before').style.display = m==='before' ? '' : 'none';
-  document.getElementById('bus-after').style.display  = m==='after'  ? '' : 'none';
-  document.querySelectorAll('#bus-tgl .tgl').forEach((b,i) =>
-    b.classList.toggle('active', (i===0 && m==='before') || (i===1 && m==='after')));
+/* ═══════ § 2 BUS VOLTAGE ═══════ */
+function switchBus(m) {
+  document.getElementById('bus-before').style.display = m === 'before' ? '' : 'none';
+  document.getElementById('bus-after').style.display  = m === 'after'  ? '' : 'none';
+  document.getElementById('bus-btn-before').classList.toggle('active', m === 'before');
+  document.getElementById('bus-btn-after').classList.toggle('active',  m === 'after');
 }
+
 function buildBusVolt() {
-  new Chart(document.getElementById('busVoltChart'), {
-    type: 'bar',
-    data: {
-      labels: ['KITN-Barat','KITN-Timur','Central','Central-Metro','Puspem','Lingga','Riviera'],
-      datasets: [
-        { label:'2026', data:[1.000,0.987,0.974,0.934,0.951,1.000,0.912], backgroundColor:'rgba(37,99,235,.75)', borderRadius:5, borderSkipped:false },
-        { label:'2036', data:[1.000,0.994,0.991,0.978,0.983,1.000,0.971], backgroundColor:'rgba(5,150,105,.75)',  borderRadius:5, borderSkipped:false }
+  mkChart('busVoltChart', {
+    type:'bar',
+    data:{
+      labels:['KITN-Barat','KITN-Timur','Central','Central-Metro','Puspem','Lingga','Riviera'],
+      datasets:[
+        {label:'2026',data:[1.000,0.987,0.974,0.934,0.951,1.000,0.912],backgroundColor:'rgba(37,99,235,.75)',borderRadius:5,borderSkipped:false},
+        {label:'2036',data:[1.000,0.994,0.991,0.978,0.983,1.000,0.971],backgroundColor:'rgba(5,150,105,.75)', borderRadius:5,borderSkipped:false}
       ]
     },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend:{ display:false }, tooltip:{ callbacks:{ label: ctx=>ctx.dataset.label+': '+ctx.parsed.y.toFixed(3)+' pu' } } },
-      scales: {
-        y: { min:0.88, max:1.02, grid:{ color:GRID_COLOR }, ticks:{ callback: v=>v.toFixed(2) }, border:{ color:C.rule2 } },
-        x: { grid:{ display:false }, ticks:{ maxRotation:35 }, border:{ color:C.rule2 } }
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toFixed(3)+' pu'}}},
+      scales:{
+        y:{min:0.88,max:1.02,grid:{color:GC},ticks:{callback:v=>v.toFixed(2)},border:{color:C.rule2}},
+        x:{grid:{display:false},ticks:{maxRotation:35},border:{color:C.rule2}}
       }
     }
   });
 }
 
-/* ═════ § 3 TRANSMISSION TABLES ═════ */
+/* ═══════ § 3 TRANSMISSION ═══════ */
 const tBefore = [
-  {n:'PLTU → KITN-Barat',         l:'3 km',  p:498, q:242, pct:99,  s:'Overload'},
-  {n:'KITN-Barat → KITN-Timur',   l:'18 km', p:182, q:89,  pct:61,  s:'Normal'},
-  {n:'KITN-Barat → GI Central',   l:'45 km', p:210, q:102, pct:70,  s:'Perhatian'},
-  {n:'KITN-Barat → Central-Metro',l:'52 km', p:165, q:108, pct:55,  s:'Normal'},
-  {n:'PLTGU → GI Central',        l:'2 km',  p:450, q:221, pct:100, s:'Overload'},
-  {n:'GI Central → Central-Metro',l:'12 km', p:160, q:104, pct:53,  s:'Normal'},
-  {n:'GI Central → Puspem',       l:'35 km', p:85,  q:43,  pct:28,  s:'Normal'},
-  {n:'PLTA → Lingga',             l:'4 km',  p:200, q:97,  pct:67,  s:'Perhatian'},
-  {n:'Lingga → Puspem',           l:'65 km', p:80,  q:37,  pct:27,  s:'Normal'},
-  {n:'Lingga → Riviera',          l:'48 km', p:110, q:55,  pct:37,  s:'Normal'},
+  {n:'PLTU → KITN-Barat',         l:'3 km',  p:498,q:242,pct:99,  s:'Overload'},
+  {n:'KITN-Barat → KITN-Timur',   l:'18 km', p:182,q:89, pct:61,  s:'Normal'},
+  {n:'KITN-Barat → GI Central',   l:'45 km', p:210,q:102,pct:70,  s:'Perhatian'},
+  {n:'KITN-Barat → Central-Metro',l:'52 km', p:165,q:108,pct:55,  s:'Normal'},
+  {n:'PLTGU → GI Central',        l:'2 km',  p:450,q:221,pct:100, s:'Overload'},
+  {n:'GI Central → Central-Metro',l:'12 km', p:160,q:104,pct:53,  s:'Normal'},
+  {n:'GI Central → Puspem',       l:'35 km', p:85, q:43, pct:28,  s:'Normal'},
+  {n:'PLTA → Lingga',             l:'4 km',  p:200,q:97, pct:67,  s:'Perhatian'},
+  {n:'Lingga → Puspem',           l:'65 km', p:80, q:37, pct:27,  s:'Normal'},
+  {n:'Lingga → Riviera',          l:'48 km', p:110,q:55, pct:37,  s:'Normal'},
 ];
 const tAfter = [
-  {n:'PLTU → KITN-Barat',         l:'Lokal', p:320, q:48,  pct:53, s:'Normal'},
-  {n:'KITN-Barat → KITN-Timur',   l:'18 km', p:240, q:99,  pct:80, s:'Normal'},
-  {n:'KITN-Barat → GI Central',   l:'45 km', p:185, q:77,  pct:62, s:'Perhatian'},
-  {n:'KITN-Barat → Central-Metro',l:'52 km', p:140, q:51,  pct:47, s:'Normal'},
-  {n:'PLTGU → GI Central',        l:'—',     p:0,   q:0,   pct:0,  s:'Normal'},
-  {n:'GI Central → Central-Metro',l:'12 km', p:130, q:47,  pct:43, s:'Normal'},
-  {n:'GI Central → Puspem',       l:'35 km', p:95,  q:37,  pct:32, s:'Normal'},
-  {n:'PLTA → Lingga',             l:'4 km',  p:400, q:149, pct:67, s:'Normal'},
-  {n:'Lingga → Puspem',           l:'65 km', p:95,  q:35,  pct:32, s:'Normal'},
-  {n:'Lingga → Riviera',          l:'48 km', p:155, q:56,  pct:52, s:'Normal'},
+  {n:'PLTU → KITN-Barat',         l:'Lokal', p:320,q:48, pct:53,s:'Normal'},
+  {n:'KITN-Barat → KITN-Timur',   l:'18 km', p:240,q:99, pct:80,s:'Normal'},
+  {n:'KITN-Barat → GI Central',   l:'45 km', p:185,q:77, pct:62,s:'Perhatian'},
+  {n:'KITN-Barat → Central-Metro',l:'52 km', p:140,q:51, pct:47,s:'Normal'},
+  {n:'PLTGU → GI Central',        l:'—',     p:0,  q:0,  pct:0, s:'Normal'},
+  {n:'GI Central → Central-Metro',l:'12 km', p:130,q:47, pct:43,s:'Normal'},
+  {n:'GI Central → Puspem',       l:'35 km', p:95, q:37, pct:32,s:'Normal'},
+  {n:'PLTA → Lingga',             l:'4 km',  p:400,q:149,pct:67,s:'Normal'},
+  {n:'Lingga → Puspem',           l:'65 km', p:95, q:35, pct:32,s:'Normal'},
+  {n:'Lingga → Riviera',          l:'48 km', p:155,q:56, pct:52,s:'Normal'},
 ];
 
-function barC(p)    { return p >= 95 ? C.crit : p >= 65 ? C.warn : C.ok; }
-function badgeT(s)  { return s==='Overload' ? 'b-crit' : s==='Perhatian' ? 'b-warn' : 'b-ok'; }
+function barC(p)   { return p >= 95 ? C.crit : p >= 65 ? C.warn : C.ok; }
+function badgeT(s) { return s==='Overload'?'b-crit':s==='Perhatian'?'b-warn':'b-ok'; }
 
 function fillTrans() {
   ['before','after'].forEach((mode, idx) => {
     const data = idx === 0 ? tBefore : tAfter;
-    document.getElementById('trans-'+mode+'-tbody').innerHTML = data.map(r => `
+    const tbody = document.getElementById('trans-'+mode+'-tbody');
+    if (!tbody) return;
+    tbody.innerHTML = data.map(r => `
       <tr>
         <td>${r.n}</td>
         <td class="mono-cell" style="color:var(--ink-3)">${r.l}</td>
@@ -1520,23 +1414,24 @@ function fillTrans() {
       </tr>`).join('');
   });
 }
-function switchTrans(m, el) {
-  document.getElementById('trans-before').style.display = m==='before' ? '' : 'none';
-  document.getElementById('trans-after').style.display  = m==='after'  ? '' : 'none';
-  document.querySelectorAll('#trans-tgl .tgl').forEach((b,i) =>
-    b.classList.toggle('active', (i===0 && m==='before') || (i===1 && m==='after')));
+
+function switchTrans(m) {
+  document.getElementById('trans-before').style.display = m === 'before' ? '' : 'none';
+  document.getElementById('trans-after').style.display  = m === 'after'  ? '' : 'none';
+  document.getElementById('trans-btn-before').classList.toggle('active', m === 'before');
+  document.getElementById('trans-btn-after').classList.toggle('active',  m === 'after');
 }
 
-/* ═════ § 4 SKEMA OPERASI ═════ */
+/* ═══════ § 4 SKEMA OPERASI ═══════ */
 const MD = {
-  grid: {
-    mcs: [
-      {l:'Sumber utama', v:'Grid + PLTS', s:'Mode normal',       cls:'ok'},
-      {l:'BESS status',  v:'Standby',     s:'Siap discharge',    cls:'ok'},
-      {l:'GFM mode',     v:'Grid-following', s:'Sync jaringan',  cls:'info'},
-      {l:'Keandalan',    v:'100%',        s:'Semua tier aktif',  cls:'ok'}
+  grid:{
+    mcs:[
+      {l:'Sumber utama',  v:'Grid + PLTS',    s:'Mode normal',     cls:'ok'},
+      {l:'BESS status',   v:'Standby',         s:'Siap discharge',  cls:'ok'},
+      {l:'GFM mode',      v:'Grid-following',  s:'Sync jaringan',   cls:'info'},
+      {l:'Keandalan',     v:'100%',            s:'Semua tier aktif',cls:'ok'}
     ],
-    rows: [
+    rows:[
       ['Jaringan 150 kV','Aktif','b-ok','Suplai primer'],
       ['PLTS 80 MW','Produksi','b-ok','~18 MW avg siang'],
       ['BESS 400 MWh','Standby/Charge','b-ok','SOC 90–95%'],
@@ -1545,17 +1440,17 @@ const MD = {
       ['Tier 2 (24 MW)','Tersuplai','b-ok','Grid'],
       ['Tier 3 (18 MW)','Tersuplai','b-ok','Grid']
     ],
-    note: '<strong>Mode normal:</strong> semua beban Tier 1–3 tersuplai penuh dari jaringan 150 kV. BESS standby/charging SOC 90–95%, siap diaktifkan saat darurat.',
+    note:'<strong>Mode normal:</strong> semua beban Tier 1–3 tersuplai penuh dari jaringan 150 kV. BESS standby/charging SOC 90–95%, siap diaktifkan saat darurat.',
     pillText:'GRID-CONN.', pillBg:'#1e293b'
   },
-  island: {
-    mcs: [
-      {l:'Sumber aktif',   v:'PLTS + BESS',  s:'Grid terputus',          cls:'warn'},
-      {l:'BESS status',    v:'Discharge',     s:'42 MW aktif',            cls:'ok'},
-      {l:'GFM mode',       v:'Grid-forming',  s:'Referensi f/V buatan',   cls:'hi'},
-      {l:'Beban terlayani',v:'Tier 1+2',      s:'Tier 3 shed',            cls:'crit'}
+  island:{
+    mcs:[
+      {l:'Sumber aktif',   v:'PLTS + BESS',  s:'Grid terputus',         cls:'warn'},
+      {l:'BESS status',    v:'Discharge',     s:'42 MW aktif',           cls:'ok'},
+      {l:'GFM mode',       v:'Grid-forming',  s:'Referensi f/V buatan',  cls:'hi'},
+      {l:'Beban terlayani',v:'Tier 1+2',      s:'Tier 3 shed',           cls:'crit'}
     ],
-    rows: [
+    rows:[
       ['Jaringan 150 kV','Terputus','b-crit','Gangguan transmisi'],
       ['PLTS 80 MW','Produksi','b-ok','~18 MW siang'],
       ['BESS 400 MWh','Discharge aktif','b-ok','~24 MW · SOC turun'],
@@ -1564,37 +1459,44 @@ const MD = {
       ['Tier 2 (24 MW)','Tersuplai','b-ok','BESS discharge'],
       ['Tier 3 (18 MW)','Load shed','b-warn','Diputus otomatis']
     ],
-    note: '<strong>Mode islanding:</strong> GFM inverter mengambil alih referensi frekuensi dan tegangan. Load shedding otomatis memutus Tier 3 dalam &lt;200 ms.',
+    note:'<strong>Mode islanding:</strong> GFM inverter mengambil alih referensi frekuensi dan tegangan. Load shedding otomatis memutus Tier 3 dalam &lt;200 ms.',
     pillText:'ISLANDED', pillBg:'#dc2626'
   }
 };
 
 function setMode(m) {
-  ['grid','island'].forEach(k =>
-    document.getElementById('btn-'+k).classList.toggle('active', k===m));
+  document.getElementById('btn-grid').classList.toggle('active',   m === 'grid');
+  document.getElementById('btn-island').classList.toggle('active', m === 'island');
   const d = MD[m];
-  document.getElementById('mode-metrics').innerHTML =
-    d.mcs.map(c => `<div class="mc ${c.cls}"><div class="ml">${c.l}</div><div class="mv" style="font-size:22px">${c.v}</div><div class="ms">${c.s}</div></div>`).join('');
+
+  document.getElementById('mode-metrics').innerHTML = d.mcs.map(c =>
+    `<div class="mc ${c.cls}"><div class="ml">${c.l}</div><div class="mv" style="font-size:22px">${c.v}</div><div class="ms">${c.s}</div></div>`
+  ).join('');
+
   document.getElementById('status-table').innerHTML =
     `<thead><tr><th>Komponen</th><th>Status</th><th>Keterangan</th></tr></thead><tbody>` +
     d.rows.map(r => `<tr><td class="mono-cell">${r[0]}</td><td><span class="b ${r[2]}">${r[1]}</span></td><td style="font-size:12px;color:var(--ink-3)">${r[3]}</td></tr>`).join('') +
     '</tbody>';
+
   document.getElementById('mode-note').innerHTML = d.note;
 
   document.getElementById('sg-pill').setAttribute('fill', d.pillBg);
   document.getElementById('sg-pillt').textContent = d.pillText;
 
   const gl = document.getElementById('sg-gline');
-  if (m==='island') {
-    gl.setAttribute('stroke','#dc2626'); gl.setAttribute('stroke-dasharray','4 3');
+  if (m === 'island') {
+    gl.setAttribute('stroke','#dc2626');
+    gl.setAttribute('stroke-dasharray','4 3');
   } else {
-    gl.setAttribute('stroke','#1e293b'); gl.removeAttribute('stroke-dasharray');
+    gl.setAttribute('stroke','#1e293b');
+    gl.removeAttribute('stroke-dasharray');
   }
+
   const t3   = document.getElementById('sg-t3');
   const t3l  = document.getElementById('sg-t3l');
   const t3s  = document.getElementById('sg-t3s');
   const t3ln = document.getElementById('sg-t3ln');
-  if (m==='island') {
+  if (m === 'island') {
     t3.setAttribute('stroke','#dc2626'); t3.setAttribute('fill','#fef2f2');
     t3l.setAttribute('fill','#dc2626'); t3s.setAttribute('fill','#dc2626');
     t3s.textContent = '18 MW (SHED)';
@@ -1606,11 +1508,10 @@ function setMode(m) {
     t3ln.removeAttribute('stroke-dasharray'); t3ln.setAttribute('stroke','#a8a29e');
   }
 }
-setMode('grid');
 
-/* ═════ § 5 RESPONS FREKUENSI ═════ */
-let freqChart, freqCurrentScenario = 'full';
-const freqTimes = Array.from({length:100}, (_,i) => parseFloat((i*0.1).toFixed(1)));
+/* ═══════ § 5 RESPONS FREKUENSI ═══════ */
+const freqTimes = Array.from({length:100}, (_, i) => parseFloat((i * 0.1).toFixed(1)));
+let freqCurrentScenario = 'full';
 
 function freqGenCurve(nadir, tNadir, tSettle, settleFreq, unstable) {
   return freqTimes.map(t => {
@@ -1627,82 +1528,88 @@ function freqGenCurve(nadir, tNadir, tSettle, settleFreq, unstable) {
     return parseFloat(Math.min(nadir + (settleFreq - nadir) * (1 - Math.exp(-(ta - tNadir) / tau)), 50).toFixed(3));
   });
 }
+
 function freqGetParams() {
   return {
     dist: parseInt(document.getElementById('freqDist').value) / 100,
     bess: parseInt(document.getElementById('freqBess').value),
-    ebt:  parseInt(document.getElementById('freqEbt').value) / 100,
+    ebt:  parseInt(document.getElementById('freqEbt').value)  / 100,
     gfm:  parseInt(document.getElementById('freqGfm').value)
   };
 }
+
 function freqComputeMetrics(p) {
-  const inertia = 1 - (p.ebt * 0.6);
-  const bessI   = Math.min(p.bess / 2020, 1) * 0.5;
-  const gfmI    = (p.gfm / 4) * 0.35;
-  const nadirNo   = parseFloat(Math.max(47.0, 50 - p.dist * 8 * (1 / Math.max(inertia, 0.1))).toFixed(2));
-  const nadirBess = parseFloat(Math.max(48.2, 50 - p.dist * 5 * (1 / Math.max(inertia + bessI * 0.5, 0.15))).toFixed(2));
-  const nadirFull = parseFloat(Math.max(49.1, 50 - p.dist * 2.8 * (1 / Math.max(inertia + bessI + gfmI, 0.2))).toFixed(2));
+  const inertia  = 1 - (p.ebt * 0.6);
+  const bessI    = Math.min(p.bess / 2020, 1) * 0.5;
+  const gfmI     = (p.gfm / 4) * 0.35;
+  const nadirNo  = parseFloat(Math.max(47.0, 50 - p.dist * 8  * (1 / Math.max(inertia, 0.1))).toFixed(2));
+  const nadirBess= parseFloat(Math.max(48.2, 50 - p.dist * 5  * (1 / Math.max(inertia + bessI * 0.5, 0.15))).toFixed(2));
+  const nadirFull= parseFloat(Math.max(49.1, 50 - p.dist * 2.8* (1 / Math.max(inertia + bessI + gfmI, 0.2))).toFixed(2));
   const tNNo   = parseFloat((1.2 + p.dist * 3).toFixed(1));
   const tNBess = parseFloat((1.5 + p.dist * 1.5).toFixed(1));
   const tNFull = parseFloat((1.8 + p.dist * 0.6).toFixed(1));
   const unstable = nadirNo < 49.0;
   return {
-    no:   { nadir:nadirNo,   tNadir:tNNo,   tRec: unstable ? '—' : '15+', settle: unstable ? nadirNo - 0.5 : 49.3, unstable },
-    bess: { nadir:nadirBess, tNadir:tNBess, tRec: parseFloat(Math.max(2.0, 8 - bessI * 4).toFixed(1)), settle:49.75, unstable:false },
-    full: { nadir:nadirFull, tNadir:tNFull, tRec: parseFloat(Math.max(1.8, 4.2 - gfmI * 2 - bessI).toFixed(1)), settle:49.95, unstable:false }
+    no:  {nadir:nadirNo,   tNadir:tNNo,   tRec:unstable?'—':'15+',settle:unstable?nadirNo-0.5:49.3,unstable},
+    bess:{nadir:nadirBess, tNadir:tNBess, tRec:parseFloat(Math.max(2.0,8-bessI*4).toFixed(1)),settle:49.75,unstable:false},
+    full:{nadir:nadirFull, tNadir:tNFull, tRec:parseFloat(Math.max(1.8,4.2-gfmI*2-bessI).toFixed(1)),settle:49.95,unstable:false}
   };
 }
+
 function freqRefresh() {
   const p = freqGetParams(), m = freqComputeMetrics(p);
-  const noD  = freqGenCurve(m.no.nadir,   m.no.tNadir,   15,          m.no.settle,   m.no.unstable);
-  const bD   = freqGenCurve(m.bess.nadir, m.bess.tNadir, m.bess.tRec, m.bess.settle, false);
-  const fD   = freqGenCurve(m.full.nadir, m.full.tNadir, m.full.tRec, m.full.settle, false);
+  const noD = freqGenCurve(m.no.nadir,   m.no.tNadir,   15,         m.no.settle,   m.no.unstable);
+  const bD  = freqGenCurve(m.bess.nadir, m.bess.tNadir, m.bess.tRec,m.bess.settle, false);
+  const fD  = freqGenCurve(m.full.nadir, m.full.tNadir, m.full.tRec,m.full.settle, false);
   const safe = freqTimes.map(() => 49.5);
-  if (freqChart) freqChart.destroy();
-  freqChart = new Chart(document.getElementById('freqChart'), {
-    type: 'line',
-    data: { labels: freqTimes, datasets: [
-      { data:noD,  borderColor:C.crit, borderWidth:1.8, pointRadius:0, tension:.3, borderDash:[5,3] },
-      { data:bD,   borderColor:C.warn, borderWidth:1.8, pointRadius:0, tension:.3 },
-      { data:fD,   borderColor:C.ok,   borderWidth:2.6, pointRadius:0, tension:.3 },
-      { data:safe, borderColor:C.rule, borderWidth:1,   borderDash:[3,4], pointRadius:0 }
+
+  mkChart('freqChart', {
+    type:'line',
+    data:{labels:freqTimes, datasets:[
+      {data:noD, borderColor:C.crit, borderWidth:1.8, pointRadius:0, tension:.3, borderDash:[5,3]},
+      {data:bD,  borderColor:C.warn, borderWidth:1.8, pointRadius:0, tension:.3},
+      {data:fD,  borderColor:C.ok,   borderWidth:2.6, pointRadius:0, tension:.3},
+      {data:safe,borderColor:C.rule, borderWidth:1,   borderDash:[3,4], pointRadius:0}
     ]},
-    options: {
+    options:{
       responsive:true, maintainAspectRatio:false,
-      plugins: { legend:{ display:false }, tooltip:{ callbacks:{
-        title: ctx => 't = '+ctx[0].label+' s',
-        label: ctx => (['Tanpa','BESS','GFM+BESS','Batas'][ctx.datasetIndex])+': '+ctx.parsed.y.toFixed(3)+' Hz'
+      plugins:{legend:{display:false}, tooltip:{callbacks:{
+        title:ctx=>'t = '+ctx[0].label+' s',
+        label:ctx=>(['Tanpa','BESS','GFM+BESS','Batas'][ctx.datasetIndex])+': '+ctx.parsed.y.toFixed(3)+' Hz'
       }}},
-      scales: {
-        x: { ticks:{ maxTicksLimit:11, callback:(v,i) => freqTimes[i] % 1 === 0 ? freqTimes[i]+'s' : '' },
-             grid:{color:GRID_COLOR}, border:{color:C.rule2}, title:{display:true,text:'Waktu (detik)',font:{size:11}} },
-        y: { min:47.0, max:50.4, ticks:{callback: v=>v.toFixed(1)+' Hz'},
-             grid:{color:GRID_COLOR}, border:{color:C.rule2}, title:{display:true,text:'Frekuensi (Hz)',font:{size:11}} }
+      scales:{
+        x:{ticks:{maxTicksLimit:11,callback:(v,i)=>freqTimes[i]%1===0?freqTimes[i]+'s':''},
+           grid:{color:GC},border:{color:C.rule2},title:{display:true,text:'Waktu (detik)',font:{size:11}}},
+        y:{min:47.0,max:50.4,ticks:{callback:v=>v.toFixed(1)+' Hz'},
+           grid:{color:GC},border:{color:C.rule2},title:{display:true,text:'Frekuensi (Hz)',font:{size:11}}}
       }
     }
   });
+
   freqUpdateCards(m, freqCurrentScenario);
   freqRenderComp(m);
   freqRenderTimeline(m, freqCurrentScenario);
-  document.getElementById('freq-dist-disp').innerHTML = Math.round(p.dist * 100)+'<span class="unit">%</span>';
+  document.getElementById('freq-dist-disp').innerHTML = Math.round(p.dist*100)+'<span class="unit">%</span>';
 }
+
 function freqUpdateCards(m, s) {
-  const d = m[s==='noprotect' ? 'no' : s==='bessonly' ? 'bess' : 'full'];
-  document.getElementById('freq-nadir').innerHTML     = d.nadir.toFixed(2)+'<span class="unit">Hz</span>';
-  document.getElementById('freq-tnadir').innerHTML    = d.tNadir+'<span class="unit">s</span>';
-  document.getElementById('freq-trec').innerHTML      = d.unstable ? 'TRIP' : d.tRec+'<span class="unit">s</span>';
-  document.getElementById('freq-nadir-sub').textContent  = d.unstable ? 'di bawah batas trip' : d.nadir < 49.5 ? 'kritis · butuh perhatian' : 'aman · di atas batas';
-  document.getElementById('freq-status-sub').textContent = d.unstable ? 'sistem trip — UFLS aktif' : 'stabil di '+d.settle.toFixed(2)+' Hz';
+  const d = m[s==='noprotect'?'no':s==='bessonly'?'bess':'full'];
+  document.getElementById('freq-nadir').innerHTML    = d.nadir.toFixed(2)+'<span class="unit">Hz</span>';
+  document.getElementById('freq-tnadir').innerHTML   = d.tNadir+'<span class="unit">s</span>';
+  document.getElementById('freq-trec').innerHTML     = d.unstable?'TRIP':d.tRec+'<span class="unit">s</span>';
+  document.getElementById('freq-nadir-sub').textContent  = d.unstable?'di bawah batas trip':d.nadir<49.5?'kritis · butuh perhatian':'aman · di atas batas';
+  document.getElementById('freq-status-sub').textContent = d.unstable?'sistem trip — UFLS aktif':'stabil di '+d.settle.toFixed(2)+' Hz';
 }
+
 function freqRenderComp(m) {
   const rows = [
-    ['Nadir (Hz)',     m.no.nadir.toFixed(2), m.bess.nadir.toFixed(2), m.full.nadir.toFixed(2)],
-    ['Waktu nadir (s)',m.no.tNadir,           m.bess.tNadir,           m.full.tNadir],
-    ['Waktu pulih (s)',m.no.unstable ? 'Trip' : m.no.tRec, m.bess.tRec, m.full.tRec],
-    ['Status',         m.no.unstable ? 'Trip' : 'Aman', 'Aman', 'Aman'],
-    ['UFLS',           m.no.unstable ? 'Ya' : 'Mungkin', 'Tidak', 'Tidak']
+    ['Nadir (Hz)',      m.no.nadir.toFixed(2), m.bess.nadir.toFixed(2), m.full.nadir.toFixed(2)],
+    ['Waktu nadir (s)', m.no.tNadir,           m.bess.tNadir,           m.full.tNadir],
+    ['Waktu pulih (s)', m.no.unstable?'Trip':m.no.tRec, m.bess.tRec,   m.full.tRec],
+    ['Status',          m.no.unstable?'Trip':'Aman', 'Aman',            'Aman'],
+    ['UFLS',            m.no.unstable?'Ya':'Mungkin', 'Tidak',          'Tidak']
   ];
-  const sc = { 'Trip':C.crit, 'Aman':C.ok, 'Mungkin':C.warn, 'Ya':C.crit, 'Tidak':C.ok };
+  const sc = {'Trip':C.crit,'Aman':C.ok,'Mungkin':C.warn,'Ya':C.crit,'Tidak':C.ok};
   document.getElementById('freqCompTable').innerHTML = rows.map(r =>
     `<tr>
       <td style="color:var(--ink-3);font-family:var(--mono);font-size:11px">${r[0]}</td>
@@ -1711,43 +1618,47 @@ function freqRenderComp(m) {
       <td style="text-align:center;color:${sc[r[3]]||'var(--ink)'};font-family:var(--mono);font-size:12px;font-weight:600">${r[3]}</td>
     </tr>`).join('');
 }
+
 function freqRenderTimeline(m, s) {
   const dist = document.getElementById('freqDist').value;
   const events = {
-    noprotect: [
-      {t:'0,0 s', txt:'Kondisi normal — frekuensi 50 Hz', c:C.ink3},
-      {t:'0,5 s', txt:'Kehilangan pembangkit — '+dist+'% daya hilang mendadak', c:C.warn},
+    noprotect:[
+      {t:'0,0 s',  txt:'Kondisi normal — frekuensi 50 Hz',                               c:C.ink3},
+      {t:'0,5 s',  txt:'Kehilangan pembangkit — '+dist+'% daya hilang mendadak',         c:C.warn},
       {t:m.no.tNadir+' s', txt:'<strong>Nadir frekuensi: '+m.no.nadir.toFixed(2)+' Hz</strong> — melewati batas aman', c:C.crit},
       {t:(m.no.tNadir+0.3).toFixed(1)+' s', txt:'<strong>Under-frequency relay trip</strong> — pemadaman beruntai', c:C.crit}
     ],
-    bessonly: [
-      {t:'0,0 s', txt:'Kondisi normal', c:C.ink3},
-      {t:'0,5 s', txt:'Kehilangan pembangkit — BESS deteksi &lt;100 ms', c:C.warn},
-      {t:'0,6 s', txt:'<strong>BESS aktif</strong> — injeksi daya primer', c:C.ok},
+    bessonly:[
+      {t:'0,0 s',  txt:'Kondisi normal',                                                 c:C.ink3},
+      {t:'0,5 s',  txt:'Kehilangan pembangkit — BESS deteksi &lt;100 ms',               c:C.warn},
+      {t:'0,6 s',  txt:'<strong>BESS aktif</strong> — injeksi daya primer',             c:C.ok},
       {t:m.bess.tNadir+' s', txt:'Nadir: '+m.bess.nadir.toFixed(2)+' Hz — dalam batas aman', c:C.warn},
-      {t:m.bess.tRec+' s', txt:'Frekuensi pulih — governor konvensional aktif', c:C.ok}
+      {t:m.bess.tRec+' s',   txt:'Frekuensi pulih — governor konvensional aktif',       c:C.ok}
     ],
-    full: [
-      {t:'0,0 s', txt:'Kondisi normal', c:C.ink3},
-      {t:'0,5 s', txt:'Kehilangan pembangkit terdeteksi AI-SCADA', c:C.warn},
-      {t:'0,52 s', txt:'<strong>GFM inverter aktivasi</strong> — referensi frekuensi dipertahankan', c:C.ok},
-      {t:'0,55 s', txt:'BESS injeksi daya — menutup defisit dalam milidetik', c:C.ok},
+    full:[
+      {t:'0,0 s',   txt:'Kondisi normal',                                                c:C.ink3},
+      {t:'0,5 s',   txt:'Kehilangan pembangkit terdeteksi AI-SCADA',                    c:C.warn},
+      {t:'0,52 s',  txt:'<strong>GFM inverter aktivasi</strong> — referensi frekuensi dipertahankan', c:C.ok},
+      {t:'0,55 s',  txt:'BESS injeksi daya — menutup defisit dalam milidetik',          c:C.ok},
       {t:m.full.tNadir+' s', txt:'<strong>Nadir minimal: '+m.full.nadir.toFixed(2)+' Hz</strong> — jauh di atas trip', c:C.ok},
-      {t:m.full.tRec+' s', txt:'Frekuensi stabil di 49,95 Hz — operasi normal', c:C.ok}
+      {t:m.full.tRec+' s',   txt:'Frekuensi stabil di 49,95 Hz — operasi normal',      c:C.ok}
     ]
   };
   const evs = events[s] || events.full;
   document.getElementById('freqTimeline').innerHTML = evs.map(e =>
-    `<div class="tl"><div class="tl-t" style="color:${e.c}">${e.t}</div><div class="tl-d">${e.txt}</div></div>`).join('');
+    `<div class="tl"><div class="tl-t" style="color:${e.c}">${e.t}</div><div class="tl-d">${e.txt}</div></div>`
+  ).join('');
 }
+
 function freqSetScenario(s) {
   freqCurrentScenario = s;
   ['noprotect','bessonly','full'].forEach(k =>
-    document.getElementById('fsb-'+k).classList.toggle('active', k===s));
+    document.getElementById('fsb-'+k).classList.toggle('active', k === s));
   const p = freqGetParams(), m = freqComputeMetrics(p);
   freqUpdateCards(m, s);
   freqRenderTimeline(m, s);
 }
+
 function freqOnChange() {
   document.getElementById('freqDistVal').textContent = document.getElementById('freqDist').value+'%';
   document.getElementById('freqBessVal').textContent = document.getElementById('freqBess').value;
@@ -1755,204 +1666,189 @@ function freqOnChange() {
   document.getElementById('freqGfmVal').textContent  = document.getElementById('freqGfm').value;
   freqRefresh();
 }
+
 function buildVolt() {
-  new Chart(document.getElementById('voltChart'), {
-    type: 'bar',
-    data: {
-      labels: ['KITN-Barat','KITN-Timur','GI Central','Central-Metro','Puspem','Lingga','Riviera'],
-      datasets: [
-        { label:'Sebelum', data:[0.92,0.90,0.88,0.77,0.85,0.83,0.87], backgroundColor:'rgba(220,38,38,.7)', borderRadius:5, borderSkipped:false },
-        { label:'Sesudah', data:[0.97,0.96,0.95,0.93,0.96,0.94,0.95], backgroundColor:'rgba(5,150,105,.7)',  borderRadius:5, borderSkipped:false }
+  mkChart('voltChart', {
+    type:'bar',
+    data:{
+      labels:['KITN-Barat','KITN-Timur','GI Central','Central-Metro','Puspem','Lingga','Riviera'],
+      datasets:[
+        {label:'Sebelum',data:[0.92,0.90,0.88,0.77,0.85,0.83,0.87],backgroundColor:'rgba(220,38,38,.7)',borderRadius:5,borderSkipped:false},
+        {label:'Sesudah',data:[0.97,0.96,0.95,0.93,0.96,0.94,0.95],backgroundColor:'rgba(5,150,105,.7)', borderRadius:5,borderSkipped:false}
       ]
     },
-    options: {
+    options:{
       responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, tooltip:{callbacks:{label: ctx=>ctx.dataset.label+': '+ctx.parsed.y.toFixed(2)+' pu'}} },
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toFixed(2)+' pu'}}},
       scales:{
-        x:{ ticks:{maxRotation:25}, grid:{display:false}, border:{color:C.rule2} },
-        y:{ min:0.70, max:1.05, grid:{color:GRID_COLOR}, ticks:{stepSize:0.05}, border:{color:C.rule2} }
+        x:{ticks:{maxRotation:25},grid:{display:false},border:{color:C.rule2}},
+        y:{min:0.70,max:1.05,grid:{color:GC},ticks:{stepSize:0.05},border:{color:C.rule2}}
       }
     }
   });
 }
 
-/* ═════ § 6 PIE CHART ═════ */
+/* ═══════ § 6 PIE ═══════ */
 function buildPie() {
-  new Chart(document.getElementById('pieChart'), {
-    type: 'doughnut',
-    data: {
-      labels: ['Tier 1','Tier 2','Tier 3'],
-      datasets: [{ data:[18,24,18], backgroundColor:[C.crit,C.warn,C.rule], borderColor:'#fff', borderWidth:4 }]
+  mkChart('pieChart', {
+    type:'doughnut',
+    data:{
+      labels:['Tier 1','Tier 2','Tier 3'],
+      datasets:[{data:[18,24,18],backgroundColor:[C.crit,C.warn,C.rule],borderColor:'#fff',borderWidth:4}]
     },
-    options: {
+    options:{
       responsive:true, maintainAspectRatio:false, cutout:'58%',
-      plugins:{ legend:{display:false}, tooltip:{callbacks:{label: ctx=>ctx.label+': '+ctx.parsed+' MW'}} }
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.label+': '+c.parsed+' MW'}}}
     }
   });
 }
 
-/* ═════ § 7 POWER CHART ═════ */
+/* ═══════ § 7 POWER ═══════ */
 function buildPow() {
-  new Chart(document.getElementById('powerChart'), {
-    type: 'bar',
-    data: {
-      labels: ['Kondisi normal (grid-connected)','Kondisi darurat (islanding malam)'],
-      datasets: [
-        { label:'PLTS', data:[18,18], backgroundColor:'rgba(217,119,6,.85)', borderRadius:6, borderSkipped:false },
-        { label:'BESS', data:[0,24],  backgroundColor:'rgba(5,150,105,.85)', borderRadius:6, borderSkipped:false },
-        { label:'Grid', data:[42,0],  backgroundColor:'rgba(37,99,235,.85)', borderRadius:6, borderSkipped:false }
+  mkChart('powerChart', {
+    type:'bar',
+    data:{
+      labels:['Kondisi normal (grid-connected)','Kondisi darurat (islanding malam)'],
+      datasets:[
+        {label:'PLTS',data:[18,18],backgroundColor:'rgba(217,119,6,.85)',borderRadius:6,borderSkipped:false},
+        {label:'BESS',data:[0,24], backgroundColor:'rgba(5,150,105,.85)', borderRadius:6,borderSkipped:false},
+        {label:'Grid',data:[42,0], backgroundColor:'rgba(37,99,235,.85)', borderRadius:6,borderSkipped:false}
       ]
     },
-    options: {
+    options:{
       responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, tooltip:{callbacks:{label: ctx=>ctx.dataset.label+': '+ctx.parsed.y+' MW'}} },
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y+' MW'}}},
       scales:{
-        x:{ stacked:true, ticks:{font:{size:11.5}}, grid:{display:false}, border:{color:C.rule2} },
-        y:{ stacked:true, min:0, max:75, grid:{color:GRID_COLOR}, ticks:{callback:v=>v+' MW'}, border:{color:C.rule2} }
+        x:{stacked:true,ticks:{font:{size:11.5}},grid:{display:false},border:{color:C.rule2}},
+        y:{stacked:true,min:0,max:75,grid:{color:GC},ticks:{callback:v=>v+' MW'},border:{color:C.rule2}}
       }
     }
   });
 }
 
-/* ═════ § 8 SOC CHART ═════ */
+/* ═══════ § 8 SOC ═══════ */
 function buildSoc() {
-  const h = Array.from({length:25}, (_,i) => i);
+  const h = Array.from({length:25},(_,i)=>i);
   const s = [95,95,90,83,76,69,62,55,49,44,39,35,37,44,54,64,72,78,85,88,90,91,92,93,94];
-  new Chart(document.getElementById('socChart'), {
-    type: 'line',
-    data: { labels: h.map(v=>v+'h'), datasets: [
-      { data:s, segment:{borderColor: ctx=>ctx.p0DataIndex<8?C.ok:C.warn},
-        backgroundColor:'rgba(5,150,105,.08)', fill:true, borderWidth:2.6, tension:0.4,
-        pointRadius:s.map((_,i)=>[0,2,11,18,24].includes(i)?5:0),
-        pointBackgroundColor:s.map((_,i)=>i===2?C.crit:C.ok), pointBorderColor:'#fff', pointBorderWidth:2 },
-      { data:h.map(()=>10), borderColor:C.rule,  borderWidth:1, pointRadius:0, borderDash:[4,4] },
-      { data:h.map(()=>20), borderColor:C.warn,  borderWidth:1, pointRadius:0, borderDash:[2,4] }
-    ]},
-    options: {
-      responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
-      scales:{
-        x:{ title:{display:true,text:'Waktu (jam)',font:{size:11}}, ticks:{autoSkip:false,maxRotation:0,font:{size:9.5}},
-            grid:{color:GRID_COLOR}, border:{color:C.rule2} },
-        y:{ min:0, max:100, grid:{color:GRID_COLOR}, ticks:{callback:v=>v+'%'}, border:{color:C.rule2} }
-      }
-    }
-  });
-}
-
-/* ═════ § 11 EBT/GFM CHART ═════ */
-function buildEbtChart() {
-  const yrs = [2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036];
-  const ebt = [10,18,28,42,57,68,78,87,93,97,100];
-  const gfm = [5,8,12,22,35,48,62,75,85,93,100];
-  new Chart(document.getElementById('ebtChart'), {
-    type: 'line',
-    data: { labels:yrs, datasets:[
-      { data:ebt, borderColor:C.ok,   backgroundColor:'rgba(5,150,105,.1)', borderWidth:2.4, tension:.4,
-        pointRadius:3.5, pointBackgroundColor:C.ok,   pointBorderColor:'#fff', pointBorderWidth:2, fill:true },
-      { data:gfm, borderColor:C.info, backgroundColor:'rgba(37,99,235,.06)', borderWidth:2.4, tension:.4,
-        pointRadius:3.5, pointBackgroundColor:C.info, pointBorderColor:'#fff', pointBorderWidth:2, borderDash:[5,4], fill:true },
-      { data:yrs.map(()=>40), borderColor:'rgba(220,38,38,.55)', borderDash:[4,4], pointRadius:0, borderWidth:1.2, fill:false },
-      { data:yrs.map(()=>70), borderColor:'rgba(168,162,158,.55)', borderDash:[4,4], pointRadius:0, borderWidth:1.2, fill:false }
+  mkChart('socChart', {
+    type:'line',
+    data:{labels:h.map(v=>v+'h'), datasets:[
+      {data:s,
+       segment:{borderColor:ctx=>ctx.p0DataIndex<8?C.ok:C.warn},
+       backgroundColor:'rgba(5,150,105,.08)',fill:true,borderWidth:2.6,tension:0.4,
+       pointRadius:s.map((_,i)=>[0,2,11,18,24].includes(i)?5:0),
+       pointBackgroundColor:s.map((_,i)=>i===2?C.crit:C.ok),
+       pointBorderColor:'#fff',pointBorderWidth:2},
+      {data:h.map(()=>10),borderColor:C.rule, borderWidth:1,pointRadius:0,borderDash:[4,4]},
+      {data:h.map(()=>20),borderColor:C.warn, borderWidth:1,pointRadius:0,borderDash:[2,4]}
     ]},
     options:{
       responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
       scales:{
-        y:{ min:0, max:110, grid:{color:GRID_COLOR}, ticks:{callback:v=>v+'%'}, border:{color:C.rule2} },
-        x:{ grid:{display:false}, ticks:{font:{size:10}}, border:{color:C.rule2} }
+        x:{title:{display:true,text:'Waktu (jam)',font:{size:11}},ticks:{autoSkip:false,maxRotation:0,font:{size:9.5}},grid:{color:GC},border:{color:C.rule2}},
+        y:{min:0,max:100,grid:{color:GC},ticks:{callback:v=>v+'%'},border:{color:C.rule2}}
       }
     }
   });
 }
 
-/* ═════ § 12 RENEWABLE CHARTS ═════ */
-function buildRenewable() {
-  const months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
-  new Chart(document.getElementById('solarChart'), {
-    type: 'bar',
-    data: { labels:months, datasets:[{ data:[103.85,115.92,152.83,184.80,178.56,176.40,193.75,219.17,208.80,211.73,177.30,109.43],
-      backgroundColor:'rgba(217,119,6,.78)', borderRadius:5, borderSkipped:false }]},
-    options:{ responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{display:false}, tooltip:{callbacks:{label:ctx=>ctx.parsed.y+' kWh/m²'}}},
-      scales:{y:{grid:{color:GRID_COLOR},border:{color:C.rule2}}, x:{grid:{display:false},border:{color:C.rule2}}} }
-  });
-  new Chart(document.getElementById('windChart'), {
-    type: 'line',
-    data: { labels:months, datasets:[{ data:[1.04,0.99,0.84,0.79,0.94,1.09,1.24,1.29,1.14,0.84,0.89,0.99],
-      borderColor:C.info, backgroundColor:'rgba(37,99,235,.1)', borderWidth:2.4, tension:.4, fill:true,
-      pointRadius:4, pointBackgroundColor:C.info, pointBorderColor:'#fff', pointBorderWidth:2 }]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
-      scales:{y:{min:0.6,max:1.5,grid:{color:GRID_COLOR},border:{color:C.rule2}}, x:{grid:{display:false},border:{color:C.rule2}}} }
-  });
-  const hrs = ['05','06','07','08','09','10','11','12','13','14','15','16','17','18'];
-  new Chart(document.getElementById('solarHourChart'), {
-    type: 'line',
-    data: { labels:hrs, datasets:[{ data:[4,229,432,524,590,628,650,635,598,529,434,319,227,55],
-      borderColor:'#fbbf24', backgroundColor:'rgba(251,191,36,.15)', borderWidth:2.4, tension:.4, fill:true,
-      pointRadius:3, pointBackgroundColor:'#fbbf24', pointBorderColor:'#fff', pointBorderWidth:1.5 }]},
-    options:{ responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{display:false}, tooltip:{callbacks:{label:ctx=>ctx.parsed.y+' Wh/m²'}}},
-      scales:{y:{grid:{color:GRID_COLOR},border:{color:C.rule2}}, x:{grid:{display:false},border:{color:C.rule2}}} }
-  });
-}
-
-/* ═════ § 13 DEMAND CHARTS ═════ */
-function buildDemand() {
-  const yrs    = [2021,2022,2023,2024,2025];
-  const colors = ['#3b82f6','#22d3a5','#f59e0b','#ef4444','#a78bfa','#34d399','#f472b6'];
-  const data   = [[110,125,130,180,210],[80,88,90,105,120],[65,68,70,80,90],[125,140,145,160,180],[45,48,50,55,60],[25,25,26,28,30],[100,106,99,102,110]];
-  new Chart(document.getElementById('demandChart'), {
-    type: 'line',
-    data: { labels:yrs, datasets:data.map((d,i) => ({
-      data:d, borderColor:colors[i], backgroundColor:'transparent', tension:.3,
-      pointRadius:5, pointBackgroundColor:colors[i], pointBorderColor:'#fff', pointBorderWidth:1.5, borderWidth:2.2
-    }))},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
-      scales:{y:{grid:{color:GRID_COLOR},ticks:{callback:v=>v+' MW'},border:{color:C.rule2}}, x:{grid:{display:false},border:{color:C.rule2}}} }
-  });
-  const fyrs = [2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036];
-  const base = 856;
-  const forecastD = fyrs.map((_,i) => Math.round(base * Math.pow(1.10, i)));
-  new Chart(document.getElementById('forecastChart'), {
-    type: 'line',
-    data: { labels:fyrs, datasets:[
-      { data:forecastD, borderColor:C.crit, backgroundColor:'rgba(220,38,38,.08)', tension:.4, fill:true,
-        pointRadius:4, pointBackgroundColor:C.crit, pointBorderColor:'#fff', pointBorderWidth:1.5, borderWidth:2.2 },
-      { data:[950,1100,1350,1620,1900,2100,2320,2520,2650,2750,2840], borderColor:C.ok, backgroundColor:'rgba(5,150,105,.06)',
-        tension:.4, fill:true, pointRadius:3, pointBackgroundColor:C.ok, pointBorderColor:'#fff', pointBorderWidth:1.5,
-        borderWidth:2.2, borderDash:[5,5] }
+/* ═══════ § 11 EBT/GFM ═══════ */
+function buildEbtChart() {
+  const yrs=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036];
+  const ebt=[10,18,28,42,57,68,78,87,93,97,100];
+  const gfm=[5,8,12,22,35,48,62,75,85,93,100];
+  mkChart('ebtChart', {
+    type:'line',
+    data:{labels:yrs, datasets:[
+      {data:ebt,borderColor:C.ok,  backgroundColor:'rgba(5,150,105,.1)', borderWidth:2.4,tension:.4,pointRadius:3.5,pointBackgroundColor:C.ok,  pointBorderColor:'#fff',pointBorderWidth:2,fill:true},
+      {data:gfm,borderColor:C.info,backgroundColor:'rgba(37,99,235,.06)',borderWidth:2.4,tension:.4,pointRadius:3.5,pointBackgroundColor:C.info, pointBorderColor:'#fff',pointBorderWidth:2,borderDash:[5,4],fill:true},
+      {data:yrs.map(()=>40),borderColor:'rgba(220,38,38,.55)',borderDash:[4,4],pointRadius:0,borderWidth:1.2,fill:false},
+      {data:yrs.map(()=>70),borderColor:'rgba(168,162,158,.55)',borderDash:[4,4],pointRadius:0,borderWidth:1.2,fill:false}
     ]},
-    options:{ responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
-      scales:{y:{grid:{color:GRID_COLOR},ticks:{callback:v=>v+' MW'},border:{color:C.rule2}}, x:{grid:{display:false},border:{color:C.rule2}}} }
+    options:{
+      responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+      scales:{
+        y:{min:0,max:110,grid:{color:GC},ticks:{callback:v=>v+'%'},border:{color:C.rule2}},
+        x:{grid:{display:false},ticks:{font:{size:10}},border:{color:C.rule2}}
+      }
+    }
   });
 }
 
-/* ═════ § 14 MICRO HUB ═════ */
+/* ═══════ § 12 RENEWABLE ═══════ */
+function buildRenewable() {
+  const months=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+  mkChart('solarChart',{
+    type:'bar',
+    data:{labels:months,datasets:[{data:[103.85,115.92,152.83,184.80,178.56,176.40,193.75,219.17,208.80,211.73,177.30,109.43],backgroundColor:'rgba(217,119,6,.78)',borderRadius:5,borderSkipped:false}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y+' kWh/m²'}}},scales:{y:{grid:{color:GC},border:{color:C.rule2}},x:{grid:{display:false},border:{color:C.rule2}}}}
+  });
+  mkChart('windChart',{
+    type:'line',
+    data:{labels:months,datasets:[{data:[1.04,0.99,0.84,0.79,0.94,1.09,1.24,1.29,1.14,0.84,0.89,0.99],borderColor:C.info,backgroundColor:'rgba(37,99,235,.1)',borderWidth:2.4,tension:.4,fill:true,pointRadius:4,pointBackgroundColor:C.info,pointBorderColor:'#fff',pointBorderWidth:2}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{min:0.6,max:1.5,grid:{color:GC},border:{color:C.rule2}},x:{grid:{display:false},border:{color:C.rule2}}}}
+  });
+  const hrs=['05','06','07','08','09','10','11','12','13','14','15','16','17','18'];
+  mkChart('solarHourChart',{
+    type:'line',
+    data:{labels:hrs,datasets:[{data:[4,229,432,524,590,628,650,635,598,529,434,319,227,55],borderColor:'#fbbf24',backgroundColor:'rgba(251,191,36,.15)',borderWidth:2.4,tension:.4,fill:true,pointRadius:3,pointBackgroundColor:'#fbbf24',pointBorderColor:'#fff',pointBorderWidth:1.5}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.y+' Wh/m²'}}},scales:{y:{grid:{color:GC},border:{color:C.rule2}},x:{grid:{display:false},border:{color:C.rule2}}}}
+  });
+}
+
+/* ═══════ § 13 DEMAND ═══════ */
+function buildDemand() {
+  const yrs=[2021,2022,2023,2024,2025];
+  const colors=['#3b82f6','#22d3a5','#f59e0b','#ef4444','#a78bfa','#34d399','#f472b6'];
+  const data=[[110,125,130,180,210],[80,88,90,105,120],[65,68,70,80,90],[125,140,145,160,180],[45,48,50,55,60],[25,25,26,28,30],[100,106,99,102,110]];
+  mkChart('demandChart',{
+    type:'line',
+    data:{labels:yrs,datasets:data.map((d,i)=>({data:d,borderColor:colors[i],backgroundColor:'transparent',tension:.3,pointRadius:5,pointBackgroundColor:colors[i],pointBorderColor:'#fff',pointBorderWidth:1.5,borderWidth:2.2}))},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:{color:GC},ticks:{callback:v=>v+' MW'},border:{color:C.rule2}},x:{grid:{display:false},border:{color:C.rule2}}}}
+  });
+  const fyrs=[2026,2027,2028,2029,2030,2031,2032,2033,2034,2035,2036];
+  const base=856;
+  const fcastD=fyrs.map((_,i)=>Math.round(base*Math.pow(1.10,i)));
+  mkChart('forecastChart',{
+    type:'line',
+    data:{labels:fyrs,datasets:[
+      {data:fcastD,borderColor:C.crit,backgroundColor:'rgba(220,38,38,.08)',tension:.4,fill:true,pointRadius:4,pointBackgroundColor:C.crit,pointBorderColor:'#fff',pointBorderWidth:1.5,borderWidth:2.2},
+      {data:[950,1100,1350,1620,1900,2100,2320,2520,2650,2750,2840],borderColor:C.ok,backgroundColor:'rgba(5,150,105,.06)',tension:.4,fill:true,pointRadius:3,pointBackgroundColor:C.ok,pointBorderColor:'#fff',pointBorderWidth:1.5,borderWidth:2.2,borderDash:[5,5]}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:{color:GC},ticks:{callback:v=>v+' MW'},border:{color:C.rule2}},x:{grid:{display:false},border:{color:C.rule2}}}}
+  });
+}
+
+/* ═══════ § 14 MICRO HUB ═══════ */
 const hubPhaseData = {
-  "1":{ ebt:"~25%",  cap:"650 MW",  hubs:"1 / 4", bess:"460 MWh",   bessPct:23,  cls:'b-info' },
-  "2":{ ebt:"~58%",  cap:"1.490 MW",hubs:"3 / 4", bess:"940 MWh",   bessPct:47,  cls:'b-warn' },
-  "3":{ ebt:"~87%",  cap:"2.220 MW",hubs:"4 / 4", bess:"1.660 MWh", bessPct:82,  cls:'b-hi'   },
-  "4":{ ebt:"100%",  cap:"2.840 MW",hubs:"4 / 4", bess:"2.020 MWh", bessPct:100, cls:'b-ok'   }
+  "1":{ebt:"~25%", cap:"650 MW",  hubs:"1 / 4",bess:"460 MWh",  bessPct:23, cls:'b-info'},
+  "2":{ebt:"~58%", cap:"1.490 MW",hubs:"3 / 4",bess:"940 MWh",  bessPct:47, cls:'b-warn'},
+  "3":{ebt:"~87%", cap:"2.220 MW",hubs:"4 / 4",bess:"1.660 MWh",bessPct:82, cls:'b-hi'},
+  "4":{ebt:"100%", cap:"2.840 MW",hubs:"4 / 4",bess:"2.020 MWh",bessPct:100,cls:'b-ok'}
 };
+
 const hubData = [
-  { name:"Nesco-Pura · Government Micro Hub", badge:"b-info", badgeText:"Islanding Priority",
-    rows:[["Fungsi utama","Continuity of service · islanding"],["PLTS lokal","80 MW (Fase 1)"],["BESS node","400 MWh · GFM Inverter"],["Mode operasi","Grid-connected & islanded"],["Beban prioritas","Pusat pemerintahan, darurat"],["Skema pembiayaan","Public strategic funding"],["Status saat ini","Aktif penuh sejak Fase 1"]],
-    barVal:85, barColor:'var(--info)', barLabel:"Keandalan pasokan" },
-  { name:"Central-Metropolitan · Urban Stability Hub", badge:"b-ok", badgeText:"Voltage Support",
-    rows:[["Fungsi utama","Stabilitas tegangan · kualitas daya"],["PLTS lokal","200 MW (Fase 2)"],["BESS node","600 MWh · STATCOM"],["Mode operasi","Grid-connected · voltage ctrl"],["Beban prioritas","Perkotaan, bisnis, rumah tangga"],["Skema pembiayaan","Blended · utility + pinjaman"],["Status saat ini","Aktif sejak Fase 2"]],
-    barVal:72, barColor:'var(--ok)', barLabel:"Perbaikan kualitas daya" },
-  { name:"KITN · Industrial Transition Hub", badge:"b-warn", badgeText:"IPP / PPA Mode",
-    rows:[["Fungsi utama","Integrasi EBT industri · ekspansi"],["PLTB lokal","240 MW pesisir (F2-3)"],["BESS node","800 MWh · frequency support"],["Mode operasi","Grid-connected · PPA dispatch"],["Beban prioritas","Industri besar, kawasan khusus"],["Skema pembiayaan","IPP/PPA + utility co-investment"],["Status saat ini","Aktif sejak Fase 2"]],
-    barVal:68, barColor:'var(--warn)', barLabel:"Pangsa beban terpenuhi EBT" },
-  { name:"Riviera · Coastal Resilience Hub", badge:"b-hi", badgeText:"PLTB + BESS",
-    rows:[["Fungsi utama","Ketahanan pesisir · cuaca ekstrem"],["PLTB lokal","160 MW pesisir (Fase 2)"],["BESS node","220 MWh · surge protection"],["Mode operasi","Grid-connected · resilience mode"],["Beban prioritas","Pariwisata, kawasan pesisir"],["Skema pembiayaan","Blended + resilience funding"],["Status saat ini","Aktif sejak Fase 3"]],
-    barVal:61, barColor:'var(--accent)', barLabel:"Indeks resiliensi pesisir" }
+  {name:"Nesco-Pura · Government Micro Hub",badge:"b-info",badgeText:"Islanding Priority",
+   rows:[["Fungsi utama","Continuity of service · islanding"],["PLTS lokal","80 MW (Fase 1)"],["BESS node","400 MWh · GFM Inverter"],["Mode operasi","Grid-connected & islanded"],["Beban prioritas","Pusat pemerintahan, darurat"],["Skema pembiayaan","Public strategic funding"],["Status saat ini","Aktif penuh sejak Fase 1"]],
+   barVal:85,barColor:'var(--info)',barLabel:"Keandalan pasokan"},
+  {name:"Central-Metropolitan · Urban Stability Hub",badge:"b-ok",badgeText:"Voltage Support",
+   rows:[["Fungsi utama","Stabilitas tegangan · kualitas daya"],["PLTS lokal","200 MW (Fase 2)"],["BESS node","600 MWh · STATCOM"],["Mode operasi","Grid-connected · voltage ctrl"],["Beban prioritas","Perkotaan, bisnis, rumah tangga"],["Skema pembiayaan","Blended · utility + pinjaman"],["Status saat ini","Aktif sejak Fase 2"]],
+   barVal:72,barColor:'var(--ok)',barLabel:"Perbaikan kualitas daya"},
+  {name:"KITN · Industrial Transition Hub",badge:"b-warn",badgeText:"IPP / PPA Mode",
+   rows:[["Fungsi utama","Integrasi EBT industri · ekspansi"],["PLTB lokal","240 MW pesisir (F2-3)"],["BESS node","800 MWh · frequency support"],["Mode operasi","Grid-connected · PPA dispatch"],["Beban prioritas","Industri besar, kawasan khusus"],["Skema pembiayaan","IPP/PPA + utility co-investment"],["Status saat ini","Aktif sejak Fase 2"]],
+   barVal:68,barColor:'var(--warn)',barLabel:"Pangsa beban terpenuhi EBT"},
+  {name:"Riviera · Coastal Resilience Hub",badge:"b-hi",badgeText:"PLTB + BESS",
+   rows:[["Fungsi utama","Ketahanan pesisir · cuaca ekstrem"],["PLTB lokal","160 MW pesisir (Fase 2)"],["BESS node","220 MWh · surge protection"],["Mode operasi","Grid-connected · resilience mode"],["Beban prioritas","Pariwisata, kawasan pesisir"],["Skema pembiayaan","Blended + resilience funding"],["Status saat ini","Aktif sejak Fase 3"]],
+   barVal:61,barColor:'var(--accent)',barLabel:"Indeks resiliensi pesisir"}
 ];
+
 let hubIslStates = [true, false, false, false];
 
 function hubSelect(i) {
   [0,1,2,3].forEach(j => document.getElementById('hub-'+j).classList.toggle('active', j===i));
   hubRenderDetail(i);
 }
+
 function hubRenderDetail(i) {
   const h = hubData[i];
   document.getElementById('hub-detail-title').textContent = h.name;
@@ -1961,18 +1857,21 @@ function hubRenderDetail(i) {
   html += `<div style="margin-top:18px"><div class="cap-head"><span class="cap-name">${h.barLabel}</span><span class="cap-val">${h.barVal}%</span></div><div class="prog"><div class="prog-fill" style="width:${h.barVal}%;background:${h.barColor}"></div></div></div>`;
   document.getElementById('hub-detail-content').innerHTML = html;
 }
+
 function hubSetPhase(v) {
   const p = hubPhaseData[v];
+  if (!p) return;
   document.getElementById('hub-m-ebt').innerHTML  = p.ebt+(p.ebt.includes('%')?'':'<span class="unit">%</span>');
   document.getElementById('hub-m-cap').innerHTML  = p.cap.replace(' MW','<span class="unit">MW</span>');
   document.getElementById('hub-m-hubs').textContent = p.hubs;
   document.getElementById('hub-m-bess').innerHTML = p.bess.replace(' MWh','<span class="unit">MWh</span>');
   document.getElementById('hub-bess-bar').style.width = p.bessPct+'%';
-  document.getElementById('hub-bess-val').textContent = p.bess;
+  document.getElementById('hub-bess-val').textContent  = p.bess;
   const badge = document.getElementById('hub-ebt-badge');
   badge.textContent = p.ebt+' EBT';
   badge.className   = 'b '+p.cls;
 }
+
 function hubToggleIsland(i) {
   hubIslStates[i] = !hubIslStates[i];
   document.getElementById('isl-'+i).classList.toggle('on', hubIslStates[i]);
@@ -1980,76 +1879,73 @@ function hubToggleIsland(i) {
   l.textContent = hubIslStates[i] ? 'Aktif' : 'Standby';
   l.classList.toggle('on', hubIslStates[i]);
 }
+
 function buildHubEbtChart() {
-  const ebt = [21.7,24.4,30.5,42.4,58.5,72.9,87,94.9,99.7,100,100];
-  new Chart(document.getElementById('hubEbtChart'), {
-    type: 'line',
-    data: { labels:['2026','2027','2028','2029','2030','2031','2032','2033','2034','2035','2036'],
-      datasets:[{ data:ebt, borderColor:C.ok, borderWidth:2.4, pointRadius:3.5,
-        pointBackgroundColor:C.ok, pointBorderColor:'#fff', pointBorderWidth:2,
-        fill:true, backgroundColor:'rgba(5,150,105,.1)', tension:.4 }]},
-    options:{ responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{display:false}, tooltip:{callbacks:{label:ctx=>'Penetrasi EBT: '+ctx.parsed.y+'%'}}},
-      scales:{x:{ticks:{font:{size:10}},grid:{display:false},border:{color:C.rule2}},
-        y:{min:0,max:110,ticks:{callback:v=>v+'%'},grid:{color:GRID_COLOR},border:{color:C.rule2}}} }
+  const ebt=[21.7,24.4,30.5,42.4,58.5,72.9,87,94.9,99.7,100,100];
+  mkChart('hubEbtChart', {
+    type:'line',
+    data:{labels:['2026','2027','2028','2029','2030','2031','2032','2033','2034','2035','2036'],
+      datasets:[{data:ebt,borderColor:C.ok,borderWidth:2.4,pointRadius:3.5,pointBackgroundColor:C.ok,pointBorderColor:'#fff',pointBorderWidth:2,fill:true,backgroundColor:'rgba(5,150,105,.1)',tension:.4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'Penetrasi EBT: '+c.parsed.y+'%'}}},scales:{x:{ticks:{font:{size:10}},grid:{display:false},border:{color:C.rule2}},y:{min:0,max:110,ticks:{callback:v=>v+'%'},grid:{color:GC},border:{color:C.rule2}}}}
   });
 }
-hubRenderDetail(0);
 
-/* ═════ § 15 ROADMAP ═════ */
+/* ═══════ § 15 ROADMAP ═══════ */
 const roadPhases = [
-  { title:'Fase 1 · 2026–2028 · Stabilisasi awal', color:C.info,
-    milestones:[
-      {t:'Audit jaringan & pemetaan aset gardu induk kritis',        done:true},
-      {t:'PLTS 80+100 MW (180 MW kumulatif)',                        done:true},
-      {t:'BESS 280 MWh di node prioritas',                          done:true},
-      {t:'Government Micro Hub Nesco-Pura aktif + islanding',       done:true},
-      {t:'Sensor IoT dasar & SCADA generasi pertama',               done:true},
-      {t:'Proteksi surge & penguatan GI kritis',                    done:true},
-      {t:'Penetrasi EBT: 21,7% → 30,5%',                           done:true}
-    ]},
-  { title:'Fase 2 · 2028–2030 · Ekspansi EBT besar', color:C.warn,
-    milestones:[
-      {t:'PLTS ekspansi ke 650 MW kumulatif',       done:false},
-      {t:'PLTB 200 MW pesisir',                     done:false},
-      {t:'BESS diperluas ke 940 MWh',               done:false},
-      {t:'Urban Stability Hub Central-Metro aktif', done:false},
-      {t:'Industrial Transition Hub KITN aktif',    done:false},
-      {t:'AI-SCADA generasi kedua + ML forecasting',done:false},
-      {t:'Penetrasi EBT: 30,5% → 58,5%',           done:false}
-    ]},
-  { title:'Fase 3 · 2030–2033 · Geothermal + GFM meluas', color:C.accent,
-    milestones:[
-      {t:'PLTP Lingga 120 MW firm renewable',                          done:false},
-      {t:'GFM inverter diperluas ke 4 node micro hub',                 done:false},
-      {t:'BESS 1.660 MWh — islanding + black-start penuh',            done:false},
-      {t:'Pengurangan agresif PLTU & PLTGU',                          done:false},
-      {t:'Digital twin sistem penuh aktif',                           done:false},
-      {t:'Coastal Resilience Hub Riviera aktif',                      done:false},
-      {t:'Penetrasi EBT: 58,5% → 87%',                               done:false}
-    ]},
-  { title:'Fase 4 · 2033–2036 · 100% EBT & island resilience', color:C.ok,
-    milestones:[
-      {t:'Zero fossil — PLTU & PLTGU dinonaktifkan',                  done:false},
-      {t:'Smart dispatch berbasis AI — optimasi real-time',           done:false},
-      {t:'BESS 2.020 MWh — cadangan operasi 4 jam',                  done:false},
-      {t:'Island-wide resilience architecture aktif',                 done:false},
-      {t:'Full digital twin — simulasi kontingensi N-1/N-2',         done:false},
-      {t:'Operasi penuh sistem 100% EBT',                            done:false},
-      {t:'Penetrasi EBT: 87% → 100%',                               done:false}
-    ]}
+  {title:'Fase 1 · 2026–2028 · Stabilisasi awal',color:C.info,
+   milestones:[
+    {t:'Audit jaringan & pemetaan aset gardu induk kritis',done:true},
+    {t:'PLTS 80+100 MW (180 MW kumulatif)',               done:true},
+    {t:'BESS 280 MWh di node prioritas',                  done:true},
+    {t:'Government Micro Hub Nesco-Pura aktif + islanding',done:true},
+    {t:'Sensor IoT dasar & SCADA generasi pertama',       done:true},
+    {t:'Proteksi surge & penguatan GI kritis',            done:true},
+    {t:'Penetrasi EBT: 21,7% → 30,5%',                   done:true}
+   ]},
+  {title:'Fase 2 · 2028–2030 · Ekspansi EBT besar',color:C.warn,
+   milestones:[
+    {t:'PLTS ekspansi ke 650 MW kumulatif',       done:false},
+    {t:'PLTB 200 MW pesisir',                     done:false},
+    {t:'BESS diperluas ke 940 MWh',               done:false},
+    {t:'Urban Stability Hub Central-Metro aktif', done:false},
+    {t:'Industrial Transition Hub KITN aktif',    done:false},
+    {t:'AI-SCADA generasi kedua + ML forecasting',done:false},
+    {t:'Penetrasi EBT: 30,5% → 58,5%',           done:false}
+   ]},
+  {title:'Fase 3 · 2030–2033 · Geothermal + GFM meluas',color:C.accent,
+   milestones:[
+    {t:'PLTP Lingga 120 MW firm renewable',                done:false},
+    {t:'GFM inverter diperluas ke 4 node micro hub',       done:false},
+    {t:'BESS 1.660 MWh — islanding + black-start penuh',  done:false},
+    {t:'Pengurangan agresif PLTU & PLTGU',                done:false},
+    {t:'Digital twin sistem penuh aktif',                 done:false},
+    {t:'Coastal Resilience Hub Riviera aktif',            done:false},
+    {t:'Penetrasi EBT: 58,5% → 87%',                     done:false}
+   ]},
+  {title:'Fase 4 · 2033–2036 · 100% EBT & island resilience',color:C.ok,
+   milestones:[
+    {t:'Zero fossil — PLTU & PLTGU dinonaktifkan',        done:false},
+    {t:'Smart dispatch berbasis AI — optimasi real-time',  done:false},
+    {t:'BESS 2.020 MWh — cadangan operasi 4 jam',         done:false},
+    {t:'Island-wide resilience architecture aktif',       done:false},
+    {t:'Full digital twin — simulasi kontingensi N-1/N-2',done:false},
+    {t:'Operasi penuh sistem 100% EBT',                   done:false},
+    {t:'Penetrasi EBT: 87% → 100%',                      done:false}
+   ]}
 ];
+
 const roadCapData = [
-  { label:'PLTS', vals:[180,470,830,1000,1310,1540], color:C.warn  },
-  { label:'PLTB', vals:[0,110,300,400,550,640],      color:C.info  },
-  { label:'PLTA', vals:[200,250,350,400,400,400],    color:C.ok    },
-  { label:'PLTP', vals:[0,0,70,120,210,260],         color:C.crit  }
+  {label:'PLTS',vals:[180,470,830,1000,1310,1540],color:C.warn},
+  {label:'PLTB',vals:[0,110,300,400,550,640],    color:C.info},
+  {label:'PLTA',vals:[200,250,350,400,400,400],  color:C.ok},
+  {label:'PLTP',vals:[0,0,70,120,210,260],       color:C.crit}
 ];
+
 const roadTransData = [
-  { phase:'Fase 1', items:['PLTS 180 MW','BESS 280 MWh','Gov. Hub aktif','IoT dasar'],         color:C.info  },
-  { phase:'Fase 2', items:['PLTS 650 MW','PLTB 200 MW','BESS 940 MWh','2 hub aktif'],          color:C.warn  },
-  { phase:'Fase 3', items:['PLTP 120 MW','GFM 4 node','BESS 1.660 MWh','Digital twin'],        color:C.accent},
-  { phase:'Fase 4', items:['Zero fossil','Smart dispatch','BESS 2.020 MWh','100% EBT'],        color:C.ok    }
+  {phase:'Fase 1',items:['PLTS 180 MW','BESS 280 MWh','Gov. Hub aktif','IoT dasar'],color:C.info},
+  {phase:'Fase 2',items:['PLTS 650 MW','PLTB 200 MW','BESS 940 MWh','2 hub aktif'],color:C.warn},
+  {phase:'Fase 3',items:['PLTP 120 MW','GFM 4 node','BESS 1.660 MWh','Digital twin'],color:C.accent},
+  {phase:'Fase 4',items:['Zero fossil','Smart dispatch','BESS 2.020 MWh','100% EBT'],color:C.ok}
 ];
 
 function roadSelectPhase(i) {
@@ -2057,40 +1953,55 @@ function roadSelectPhase(i) {
   roadRenderMilestones(i);
   roadRenderCapBars(i);
 }
+
 function roadRenderMilestones(i) {
   const ph = roadPhases[i];
   document.getElementById('road-milestone-title').textContent = ph.title;
   document.getElementById('road-milestone-list').innerHTML = ph.milestones.map(m =>
-    `<div class="ms-row"><div class="ms-dot ${m.done?'done':''}" style="${m.done?'background:'+ph.color+';border-color:'+ph.color+';box-shadow:0 0 0 3px rgba(0,0,0,.05)':''}"></div><span class="ms-text">${m.t}</span></div>`
+    `<div class="ms-row">
+      <div class="ms-dot ${m.done?'done':''}" style="${m.done?'background:'+ph.color+';border-color:'+ph.color+';box-shadow:0 0 0 3px rgba(0,0,0,.05)':''}"></div>
+      <span class="ms-text">${m.t}</span>
+    </div>`
   ).join('');
 }
+
 function roadRenderCapBars(i) {
   const yIdx = [1,2,4,5][i];
   document.getElementById('road-cap-bars').innerHTML = roadCapData.map(d =>
-    `<div class="cap-row"><div class="cap-head"><span class="cap-name">${d.label}</span><span class="cap-val">${d.vals[yIdx]} MW</span></div><div class="prog"><div class="prog-fill" style="width:${Math.round(d.vals[yIdx]/2640*100)}%;background:${d.color}"></div></div></div>`
+    `<div class="cap-row">
+      <div class="cap-head"><span class="cap-name">${d.label}</span><span class="cap-val">${d.vals[yIdx]} MW</span></div>
+      <div class="prog"><div class="prog-fill" style="width:${Math.round(d.vals[yIdx]/2640*100)}%;background:${d.color}"></div></div>
+    </div>`
   ).join('');
 }
+
 function buildRoadCharts() {
-  const labels = ['2026','2027','2028','2029','2030','2031','2032','2033','2034','2035','2036'];
-  new Chart(document.getElementById('roadStack'), {
-    type: 'bar',
-    data: { labels, datasets:[
-      { label:'PLTS', data:[80,180,310,470,650,830,1000,1160,1310,1430,1540], backgroundColor:'rgba(217,119,6,.85)', stack:'s', borderRadius:3 },
-      { label:'PLTB', data:[0,0,40,110,200,300,400,480,550,600,640],         backgroundColor:'rgba(37,99,235,.85)', stack:'s', borderRadius:3 },
-      { label:'PLTA', data:[200,200,200,250,300,350,400,400,400,400,400],    backgroundColor:'rgba(5,150,105,.85)', stack:'s', borderRadius:3 },
-      { label:'PLTP', data:[0,0,0,0,30,70,120,170,210,240,260],             backgroundColor:'rgba(220,38,38,.85)', stack:'s', borderRadius:3 }
+  const labels=['2026','2027','2028','2029','2030','2031','2032','2033','2034','2035','2036'];
+  mkChart('roadStack', {
+    type:'bar',
+    data:{labels, datasets:[
+      {label:'PLTS',data:[80,180,310,470,650,830,1000,1160,1310,1430,1540],backgroundColor:'rgba(217,119,6,.85)',stack:'s',borderRadius:3},
+      {label:'PLTB',data:[0,0,40,110,200,300,400,480,550,600,640],        backgroundColor:'rgba(37,99,235,.85)', stack:'s',borderRadius:3},
+      {label:'PLTA',data:[200,200,200,250,300,350,400,400,400,400,400],   backgroundColor:'rgba(5,150,105,.85)', stack:'s',borderRadius:3},
+      {label:'PLTP',data:[0,0,0,0,30,70,120,170,210,240,260],            backgroundColor:'rgba(220,38,38,.85)', stack:'s',borderRadius:3}
     ]},
-    options:{ responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{display:false}, tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+ctx.parsed.y+' MW'}}},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y+' MW'}}},
       scales:{
         x:{ticks:{font:{size:10}},grid:{display:false},stacked:true,border:{color:C.rule2}},
-        y:{ticks:{callback:v=>v+' MW',font:{size:10}},grid:{color:GRID_COLOR},stacked:true,border:{color:C.rule2}}
+        y:{ticks:{callback:v=>v+' MW',font:{size:10}},grid:{color:GC},stacked:true,border:{color:C.rule2}}
       }
     }
   });
+
   document.getElementById('road-trans-grid').innerHTML = roadTransData.map(t =>
-    `<div class="trans-col" style="border-left-color:${t.color}"><div class="trans-col-title" style="color:${t.color}">${t.phase}</div>${t.items.map(it=>`<div class="trans-col-item">${it}</div>`).join('')}</div>`
+    `<div class="trans-col" style="border-left-color:${t.color}">
+      <div class="trans-col-title" style="color:${t.color}">${t.phase}</div>
+      ${t.items.map(it=>`<div class="trans-col-item">${it}</div>`).join('')}
+    </div>`
   ).join('');
+
+  /* render initial phase */
   roadRenderMilestones(0);
   roadRenderCapBars(0);
 }
